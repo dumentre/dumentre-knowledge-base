@@ -14,3 +14,4 @@
 - Always refer to `official-brand-assets` for branding constraints.
 - When making cross-repository changes, ensure consistency.
 - Any updates to the general rules must be committed here, not in the individual project's root.
+- Shared, cross-project agent skills are cataloged and backed up in `skills/README.md`; install them globally through the Skills CLI so supported agents can use them across projects.
