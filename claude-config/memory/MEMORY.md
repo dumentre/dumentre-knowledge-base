@@ -1,0 +1,6 @@
+- [Links clicáveis sempre](links-clicaveis-sempre.md) — toda menção a doc/seção/prévia vem com link direto ao lado, nunca caminho de pasta
+- [Painel Dumentre](painel-dumentre.md) — artifact privado com decisões, prospects e docs em HTML; regenerar com scripts/painel/build.js
+- [Decidir em painel visual](decidir-em-painel-visual.md) — decisões/triagens viram Artifact com banco (skill painel-decisoes), não texto no chat
+- [Chrome de automação 9222](chrome-automacao-9222.md) — o Chrome do dia a dia é outro perfil com porta 9222; ler e fechar abas por lá, nunca teclas às cegas
+- [Autonomia máxima](autonomia-maxima.md) — executar direto o que é local e reversível; ok só para ação externa da §4 e nunca senha/pagamento
+- [Economia de tokens](economia-de-tokens.md) — inegociável: Claude orquestra, braçal vai para script/Codex/OpenCode/AGY/Haiku

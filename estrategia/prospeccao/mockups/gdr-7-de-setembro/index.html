@@ -1,0 +1,165 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta de site — GDR 7 de Setembro (estudo Dumentre)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Barlow:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --red:#c8102e; --red-d:#9e0b23; --black:#141414; --white:#fbf8f3; --stone:#ece6dc; --muted:#5e5a55; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { font-family:"Barlow",system-ui,sans-serif; background:var(--white); color:var(--black); font-size:17px; line-height:1.55; }
+  a { color:inherit; }
+  .proposal { position:sticky; top:0; z-index:50; background:#fff1c7; color:#3d3000; font-size:13px; padding:9px 20px; text-align:center; border-bottom:1px solid #e6d28d; }
+  .wrap { max-width:1180px; margin:0 auto; padding:0 24px; }
+  .disp { font-family:"Big Shoulders Display",sans-serif; text-transform:uppercase; letter-spacing:.01em; line-height:.9; }
+  header.top { background:var(--black); color:var(--white); }
+  header .wrap { display:flex; justify-content:space-between; align-items:center; height:72px; }
+  .brand { display:flex; align-items:center; gap:12px; font-size:26px; font-weight:800; }
+  .stripes { width:30px; height:36px; background:repeating-linear-gradient(90deg,var(--red) 0 6px,var(--white) 6px 12px); border-radius:4px 4px 14px 14px; }
+  nav { display:flex; gap:26px; font-weight:600; font-size:15px; }
+  nav a { text-decoration:none; opacity:.85; }
+  .btn { display:inline-flex; align-items:center; gap:10px; background:var(--red); color:#fff; text-decoration:none; font-weight:700; padding:15px 24px; border-radius:6px; text-transform:uppercase; letter-spacing:.04em; font-size:15px; }
+  .btn:hover { background:var(--red-d); }
+  .btn.light { background:var(--white); color:var(--black); }
+  .hero { background:var(--black); color:var(--white); position:relative; overflow:hidden; }
+  .hero::before { content:""; position:absolute; inset:0; background:repeating-linear-gradient(90deg,rgba(200,16,46,.9) 0 80px,transparent 80px 160px); opacity:.18; }
+  .hero .wrap { position:relative; padding:72px 24px 96px; display:grid; grid-template-columns:1.2fr .8fr; gap:48px; align-items:end; }
+  .since { font-weight:700; letter-spacing:.2em; text-transform:uppercase; color:#ff8a9a; font-size:14px; }
+  .hero h1 { font-size:clamp(64px,10vw,150px); margin:14px 0 22px; }
+  .hero h1 span { color:var(--red); -webkit-text-stroke:0; }
+  .hero p.lead { font-size:20px; color:#d9d3ca; max-width:30em; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+  .facts { display:grid; gap:12px; }
+  .fact { border:2px solid rgba(251,248,243,.25); border-radius:10px; padding:16px 18px; }
+  .fact b { font-family:"Big Shoulders Display"; font-size:46px; line-height:1; display:block; color:var(--white); }
+  .fact span { color:#cfc8bd; font-size:14px; text-transform:uppercase; letter-spacing:.08em; font-weight:600; }
+  section { padding:88px 0; }
+  .kicker { color:var(--red); font-weight:700; letter-spacing:.16em; text-transform:uppercase; font-size:13px; }
+  h2 { font-size:clamp(44px,5.4vw,72px); margin-top:10px; }
+  .grid4 { display:grid; grid-template-columns:repeat(4,1fr); gap:18px; margin-top:44px; }
+  .tile { background:#fff; border:1px solid var(--stone); border-radius:12px; overflow:hidden; display:flex; flex-direction:column; }
+  .tile .ph { aspect-ratio:4/3; background:repeating-linear-gradient(135deg,#ece6dc 0 14px,#f3eee6 14px 28px); display:grid; place-items:center; color:var(--muted); font-size:13px; text-align:center; padding:12px; }
+  .tile div.t { padding:18px; }
+  .tile h3 { font-family:"Big Shoulders Display"; text-transform:uppercase; font-size:30px; line-height:1; }
+  .tile p { color:var(--muted); font-size:15px; margin-top:8px; }
+  .events { background:var(--red); color:#fff; }
+  .events .wrap { display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center; }
+  .events h2 { color:#fff; }
+  .events ul { list-style:none; display:grid; gap:12px; margin-top:22px; }
+  .events li { padding-left:28px; position:relative; font-size:18px; }
+  .events li::before { content:"★"; position:absolute; left:0; }
+  .form { background:var(--white); color:var(--black); border-radius:14px; padding:28px; }
+  .form label { display:block; font-weight:600; font-size:14px; margin-top:14px; }
+  .form .field { border:1.5px solid #cfc8bd; border-radius:8px; padding:12px 14px; margin-top:6px; color:var(--muted); background:#fff; }
+  .timeline { display:grid; grid-template-columns:repeat(4,1fr); gap:0; margin-top:44px; border-top:3px solid var(--black); }
+  .timeline div { padding:22px 18px 0 0; }
+  .timeline b { font-family:"Big Shoulders Display"; font-size:52px; line-height:1; color:var(--red); }
+  .timeline p { color:var(--muted); margin-top:6px; font-size:15.5px; }
+  .contact { display:grid; grid-template-columns:1fr 1fr 1fr; gap:18px; margin-top:40px; }
+  .contact .c { border:1px solid var(--stone); background:#fff; border-radius:12px; padding:22px; }
+  .contact dt { font-size:12px; text-transform:uppercase; letter-spacing:.12em; font-weight:700; color:var(--muted); }
+  .contact dd { font-size:17px; margin:4px 0 14px; }
+  footer { background:var(--black); color:#cfc8bd; padding:40px 0 90px; font-size:14px; }
+  .todo { background:#fff1c7; color:#3d3000; padding:0 4px; border-radius:3px; }
+  .float { position:fixed; right:20px; bottom:20px; background:#1f8f4e; color:#fff; border-radius:999px; padding:14px 20px; font-weight:700; text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.2); }
+  @media (max-width:880px) {
+    header .btn { padding:10px 14px; font-size:12px; white-space:nowrap; }
+    .brand { font-size:21px; }
+    .proposal { font-size:11.5px; padding:7px 14px; }
+    nav { display:none; }
+    .hero .wrap, .events .wrap { grid-template-columns:1fr; }
+    .grid4, .timeline, .contact { grid-template-columns:1fr 1fr; }
+    section { padding:64px 0; }
+  }
+  @media (max-width:520px) { .grid4, .timeline, .contact { grid-template-columns:1fr; } .cta-row .btn { flex:1 1 100%; justify-content:center; } }
+</style>
+</head>
+<body>
+<div class="proposal"><b>PROPOSTA</b> · Estudo de site feito pela Dumentre para apresentar ao GDR 7 de Setembro. <b>Não é o site oficial</b> e não usa o escudo do clube. Itens em amarelo precisam de confirmação.</div>
+
+<header class="top"><div class="wrap">
+  <div class="brand"><span class="stripes" aria-hidden="true"></span><span class="disp">GDR 7 de Setembro</span></div>
+  <nav><a href="#estrutura">Estrutura</a><a href="#eventos">Eventos</a><a href="#historia">História</a><a href="#contato">Contato</a></nav>
+  <a class="btn" href="#contato">Quero ser sócio</a>
+</div></header>
+
+<section class="hero" style="padding:0">
+  <div class="wrap">
+    <div>
+      <p class="since">Água Rasa · São Paulo · desde 1931</p>
+      <h1 class="disp">O clube do<br><span>bairro</span> desde 1931.</h1>
+      <p class="lead">Estádio com gramado novo, piscina, academia, ginásios e salão de festas, a poucos minutos da sua casa na zona leste.</p>
+      <div class="cta-row"><a class="btn" href="#contato">Quero ser sócio</a><a class="btn light" href="#eventos">Alugar o salão</a></div>
+    </div>
+    <div class="facts">
+      <div class="fact"><b>1931</b><span>ano de fundação <span class="todo">confirmar</span></span></div>
+      <div class="fact"><b>Estádio</b><span>com gramado renovado</span></div>
+      <div class="fact"><b>Salão nobre</b><span>para festas e eventos</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="estrutura">
+  <div class="wrap">
+    <p class="kicker">Estrutura</p>
+    <h2 class="disp">Tudo num endereço só</h2>
+    <div class="grid4">
+      <div class="tile"><div class="ph">foto real do estádio (acervo do clube)</div><div class="t"><h3>Estádio</h3><p>Gramado novo para jogos, escolinhas e campeonatos.</p></div></div>
+      <div class="tile"><div class="ph">foto real da piscina</div><div class="t"><h3>Piscina</h3><p>Lazer da família e aulas. <span class="todo">horários</span></p></div></div>
+      <div class="tile"><div class="ph">foto real da academia</div><div class="t"><h3>Academia</h3><p>Musculação para sócios. <span class="todo">planos</span></p></div></div>
+      <div class="tile"><div class="ph">foto real dos ginásios</div><div class="t"><h3>Ginásios</h3><p>Quadras cobertas para futsal, vôlei e eventos.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<section id="eventos" class="events">
+  <div class="wrap">
+    <div>
+      <p class="kicker" style="color:#ffd3da">Salão nobre e salão de festas</p>
+      <h2 class="disp">Sua festa no clube</h2>
+      <ul><li>Casamentos, 15 anos e aniversários</li><li>Confraternizações de empresas</li><li>Jantares dançantes e eventos do bairro</li><li>Capacidade e valores: <span class="todo">confirmar</span></li></ul>
+    </div>
+    <div class="form" aria-label="Exemplo de formulário de orçamento">
+      <b class="disp" style="font-size:34px">Pedir orçamento do salão</b>
+      <label>Tipo de evento</label><div class="field">Casamento, 15 anos, empresa…</div>
+      <label>Data desejada</label><div class="field">dd/mm/aaaa</div>
+      <label>Número de convidados</label><div class="field">ex.: 120</div>
+      <div style="margin-top:20px"><a class="btn" href="#contato">Enviar pelo WhatsApp</a></div>
+    </div>
+  </div>
+</section>
+
+<section id="historia">
+  <div class="wrap">
+    <p class="kicker">História</p>
+    <h2 class="disp">Mais de 90 anos de Água Rasa <span class="todo" style="font-size:16px;font-family:Barlow;text-transform:none;letter-spacing:0">confirmar fundação</span></h2>
+    <div class="timeline">
+      <div><b>1931</b><p>Fundação do Grêmio Desportivo e Recreativo 7 de Setembro. <span class="todo">confirmar</span></p></div>
+      <div><b>2011</b><p>Festa de 80 anos reúne gerações de sócios.</p></div>
+      <div><b>Hoje</b><p>Estádio com gramado novo, salão nobre e salão de festas.</p></div>
+      <div><b>Você</b><p>Faça parte da próxima página da história.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="contato" style="background:var(--stone)">
+  <div class="wrap">
+    <p class="kicker">Contato</p>
+    <h2 class="disp">Venha conhecer</h2>
+    <div class="contact">
+      <dl class="c"><dt>Sede social</dt><dd>Rua Bom Jesus, 599 · Água Rasa</dd><dt>Telefone</dt><dd>(11) 2966-7611</dd></dl>
+      <dl class="c"><dt>Estádio</dt><dd>Rua Bom Jesus, 707 · Rua Maria Adelaide, 88</dd><dt>CEP</dt><dd>03346-010</dd></dl>
+      <dl class="c"><dt>Salão de festas</dt><dd>Rua Miragem, 431 · Água Rasa</dd><dt>WhatsApp</dt><dd><span class="todo">número do clube</span></dd></dl>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Grêmio Desportivo e Recreativo 7 de Setembro · Água Rasa · São Paulo. Endereços e telefone conforme o site atual do clube.<br>Proposta de layout preparada pela Dumentre (dumentre.com) em outubro de 2026. Escudo e fotos oficiais entram somente com autorização do clube.</div></footer>
+<a class="float" href="#contato">WhatsApp</a>
+</body>
+</html>

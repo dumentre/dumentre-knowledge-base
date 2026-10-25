@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumentre — Direções de identidade</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:ital,wght@0,400..900;1,400..900&family=IBM+Plex+Mono:wght@400;500;600&family=Archivo:wdth,wght@62..125,100..900&display=swap" rel="stylesheet">
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { background: #d8d8d4; padding: 40px; display: flex; flex-direction: column; gap: 60px; align-items: flex-start; font-family: "Schibsted Grotesk", sans-serif; }
+  .label { font: 500 14px "IBM Plex Mono", monospace; color: #333; margin-bottom: -48px; }
+  .artboard { position: relative; overflow: hidden; flex: none; }
+  svg.dm { display: block; }
+
+  /* ============ LOGO EVOLUÇÃO ============ */
+  #logo-evolucao { width: 1600px; height: 900px; background: #fff; color: #15140f; padding: 64px; display: grid; grid-template-columns: repeat(3, 1fr); grid-template-rows: auto 1fr auto; gap: 24px 48px; }
+  #logo-evolucao h2 { grid-column: 1 / -1; font: 800 40px/1 "Schibsted Grotesk"; letter-spacing: -.03em; }
+  #logo-evolucao h2 small { display: block; font: 400 18px/1.4 "IBM Plex Mono"; letter-spacing: 0; color: #6b675e; margin-top: 12px; }
+  .lg-col { display: flex; flex-direction: column; gap: 20px; }
+  .lg-box { flex: 1; border: 1px solid #d9d4c7; display: grid; place-items: center; background: #faf9f5; }
+  .lg-box img { width: 300px; height: 300px; object-fit: contain; }
+  .lg-cap { font: 400 15px/1.5 "IBM Plex Mono"; color: #45423b; }
+  .lg-cap b { color: #15140f; font-weight: 600; }
+  .lg-sizes { display: flex; gap: 28px; align-items: end; justify-content: center; padding-top: 12px; }
+
+  /* ============ DIREÇÃO A — FICHA TÉCNICA ============ */
+  .A { --papel: #f4f1ea; --tinta: #15140f; --cobalto: #2236f5; --marca: #eaf05a; --grafite: #6b675e; --linha: #d9d4c7; --cobalto-claro: #e4e7fe;
+       background: var(--papel); color: var(--tinta); font-family: "Schibsted Grotesk", sans-serif; }
+  .A .mono { font-family: "IBM Plex Mono", monospace; }
+  .A .hl { background: linear-gradient(transparent 12%, var(--marca) 12%, var(--marca) 88%, transparent 88%); padding: 0 .08em; }
+  .A .grid-bg { position: absolute; inset: 0; background-image: linear-gradient(var(--linha) 1px, transparent 1px), linear-gradient(90deg, var(--linha) 1px, transparent 1px); background-size: 40px 40px; opacity: .45; pointer-events: none; }
+
+  #A-board { width: 1600px; height: 1000px; align-content: start; padding: 56px 64px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px 56px; }
+  .A .eyebrow { font: 500 14px/1 "IBM Plex Mono"; letter-spacing: .04em; text-transform: uppercase; color: var(--grafite); display: flex; gap: 16px; }
+  .A .eyebrow b { color: var(--cobalto); font-weight: 600; }
+  .A-title { font-weight: 800; font-size: 96px; line-height: .92; letter-spacing: -.045em; margin: 18px 0 20px; }
+  .A-lead { font-size: 21px; line-height: 1.45; max-width: 600px; color: #2c2a24; }
+  .A-values { display: flex; gap: 10px; margin-top: 26px; flex-wrap: wrap; }
+  .A-values span { font: 500 14px "IBM Plex Mono"; border: 1.5px solid var(--tinta); padding: 8px 12px; }
+  .A-lockup { display: flex; align-items: center; gap: 18px; color: var(--tinta); }
+  .A-wordmark { font-weight: 800; letter-spacing: -.05em; line-height: 1; }
+  .A-swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 0; border: 1.5px solid var(--tinta); }
+  .A-sw { height: 150px; padding: 12px; display: flex; flex-direction: column; justify-content: flex-end; font: 500 12px/1.4 "IBM Plex Mono"; border-right: 1.5px solid var(--tinta); }
+  .A-sw:last-child { border-right: 0; }
+  .A-type { border: 1.5px solid var(--tinta); padding: 22px 24px; display: grid; grid-template-columns: 150px 1fr; gap: 6px 20px; align-items: baseline; background: #fbfaf6; }
+  .A-type .k { font: 500 12px "IBM Plex Mono"; color: var(--grafite); text-transform: uppercase; }
+  .A-apps { display: grid; grid-template-columns: 170px 1fr; gap: 20px; }
+  .A-avatar { width: 170px; height: 170px; border-radius: 50%; background: var(--cobalto); color: var(--papel); display: grid; place-items: center; }
+  .A-card { background: var(--tinta); color: var(--papel); padding: 24px 26px; display: flex; flex-direction: column; justify-content: space-between; position: relative; }
+  .A-card .mono { font-size: 13px; line-height: 1.6; color: #bdb8ab; }
+
+  /* site A */
+  #A-site { width: 1440px; height: 900px; }
+  .A-nav { position: relative; height: 76px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; border-bottom: 1.5px solid var(--tinta); background: var(--papel); }
+  .A-nav ul { display: flex; gap: 30px; list-style: none; font-size: 15px; font-weight: 500; }
+  .A-btn { display: inline-flex; align-items: center; gap: 10px; font-weight: 700; font-size: 16px; padding: 15px 22px; border: 1.5px solid var(--tinta); text-decoration: none; color: var(--tinta); background: var(--papel); box-shadow: 4px 4px 0 var(--tinta); }
+  .A-btn.primary { background: var(--cobalto); color: #fff; border-color: var(--tinta); }
+  .A-btn.small { padding: 10px 16px; font-size: 14px; box-shadow: 3px 3px 0 var(--tinta); }
+  .A-hero { position: relative; display: grid; grid-template-columns: 1.08fr .92fr; gap: 56px; padding: 104px 64px 0; }
+  .A-h1 { font-weight: 800; font-size: 58px; line-height: 1; letter-spacing: -.04em; }
+  .A-sub { font-size: 20px; line-height: 1.5; color: #3a3830; margin: 26px 0 34px; max-width: 590px; }
+  .A-meta { display: flex; gap: 22px; margin-top: 30px; font: 500 13px "IBM Plex Mono"; color: var(--grafite); }
+  .A-meta span::before { content: "✓ "; color: var(--cobalto); }
+  .A-spec { border: 1.5px solid var(--tinta); background: #fbfaf6; box-shadow: 8px 8px 0 var(--tinta); }
+  .A-spec-head { display: flex; justify-content: space-between; padding: 12px 16px; border-bottom: 1.5px solid var(--tinta); font: 500 12px "IBM Plex Mono"; text-transform: uppercase; letter-spacing: .04em; }
+  .A-spec-img { height: 268px; overflow: hidden; border-bottom: 1.5px solid var(--tinta); position: relative; }
+  .A-spec-img img { width: 100%; display: block; }
+  .A-spec-rows { display: grid; grid-template-columns: 1fr 1fr 1fr; }
+  .A-spec-rows > div { padding: 14px 16px; border-right: 1.5px solid var(--tinta); }
+  .A-spec-rows > div:last-child { border-right: 0; }
+  .A-spec-rows .k { font: 500 11px "IBM Plex Mono"; color: var(--grafite); text-transform: uppercase; }
+  .A-spec-rows .v { font-weight: 800; font-size: 22px; letter-spacing: -.02em; margin-top: 4px; }
+  .A-callout { position: absolute; font: 500 12px "IBM Plex Mono"; color: var(--cobalto); display: flex; align-items: center; gap: 8px; white-space: nowrap; }
+  .A-callout i { width: 22px; height: 22px; border-radius: 50%; background: var(--cobalto); color: #fff; font-style: normal; display: grid; place-items: center; font-size: 11px; }
+  .A-callout::after { content: ""; display: block; width: 40px; height: 1.5px; background: var(--cobalto); }
+
+  /* post A */
+  #A-post { width: 1080px; height: 1350px; padding: 72px; display: flex; flex-direction: column; }
+  .A-post-top { display: flex; justify-content: space-between; font: 500 22px "IBM Plex Mono"; color: var(--grafite); padding-bottom: 26px; border-bottom: 2px solid var(--tinta); }
+  .A-post-h { font-weight: 800; font-size: 104px; line-height: .95; letter-spacing: -.045em; margin-top: 60px; }
+  .A-log { margin-top: auto; border: 2px solid var(--tinta); background: #fbfaf6; }
+  .A-log div { display: grid; grid-template-columns: 130px 1fr auto; gap: 24px; padding: 20px 26px; border-bottom: 2px solid var(--linha); font-size: 27px; align-items: center; }
+  .A-log div:last-child { border-bottom: 0; }
+  .A-log .t { font: 500 24px "IBM Plex Mono"; color: var(--grafite); }
+  .A-log .s { font: 600 18px "IBM Plex Mono"; padding: 6px 12px; text-transform: uppercase; }
+  .A-log .s.no { background: #f6d9d2; color: #8a2412; }
+  .A-log .s.ok { background: var(--cobalto-claro); color: var(--cobalto); }
+  .A-post-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 44px; font: 500 22px "IBM Plex Mono"; }
+
+  /* ============ DIREÇÃO B — LETREIRO DE BAIRRO ============ */
+  .B { --verde: #0e4d33; --verde-esc: #0a3624; --amarelo: #ffd43b; --creme: #fff4da; --tomate: #ee4b2b; --preto: #121212;
+       background: var(--verde); color: var(--creme); font-family: "Archivo", sans-serif; font-variation-settings: "wdth" 100; }
+  .B .cond { font-family: "Archivo"; font-stretch: 62%; font-variation-settings: "wdth" 62; font-weight: 900; text-transform: uppercase; }
+  .B .wide { font-variation-settings: "wdth" 125; font-stretch: 125%; }
+  #B-board { width: 1600px; height: 1000px; align-content: start; padding: 56px 64px; display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px 56px; }
+  .B .eyebrow { font-size: 15px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--amarelo); font-variation-settings: "wdth" 125; }
+  .B-title { font-size: 140px; line-height: .92; letter-spacing: -.01em; color: var(--amarelo); margin: 18px 0 22px; }
+  .B-lead { font-size: 21px; line-height: 1.45; max-width: 600px; }
+  .B-values { display: flex; gap: 12px; margin-top: 26px; flex-wrap: wrap; }
+  .B-values span { font-weight: 800; font-size: 15px; background: var(--creme); color: var(--verde); padding: 10px 16px; border-radius: 999px; text-transform: uppercase; letter-spacing: .04em; font-variation-settings: "wdth" 115; }
+  .B-lockup { display: flex; align-items: center; gap: 18px; }
+  .B-swatches { display: grid; grid-template-columns: repeat(5, 1fr); gap: 12px; }
+  .B-sw { height: 150px; border-radius: 22px; padding: 14px; display: flex; flex-direction: column; justify-content: flex-end; font-size: 13px; font-weight: 700; line-height: 1.35; border: 2px solid var(--creme); }
+  .B-type { background: var(--creme); color: var(--preto); border-radius: 22px; padding: 22px 26px; display: grid; grid-template-columns: 150px 1fr; gap: 6px 20px; align-items: baseline; }
+  .B-type .k { font-size: 12px; font-weight: 700; color: #5d5a4e; text-transform: uppercase; letter-spacing: .08em; }
+  .B-apps { display: grid; grid-template-columns: 170px 1fr; gap: 20px; }
+  .B-avatar { width: 170px; height: 170px; border-radius: 50%; background: var(--amarelo); color: var(--verde); display: grid; place-items: center; }
+  .B-card { background: var(--amarelo); color: var(--preto); border-radius: 22px; padding: 24px 26px; display: flex; flex-direction: column; justify-content: space-between; }
+  .B-stamp { position: absolute; border-radius: 50%; background: var(--tomate); color: var(--creme); display: grid; place-items: center; text-align: center; transform: rotate(-12deg); line-height: .9; }
+
+  #B-site { width: 1440px; height: 900px; }
+  .B-nav { height: 84px; display: flex; align-items: center; justify-content: space-between; padding: 0 64px; }
+  .B-nav ul { display: flex; gap: 28px; list-style: none; font-size: 15px; font-weight: 600; }
+  .B-btn { display: inline-flex; align-items: center; gap: 10px; font-weight: 800; font-size: 17px; padding: 18px 28px; border-radius: 999px; background: var(--amarelo); color: var(--preto); text-transform: uppercase; letter-spacing: .03em; font-variation-settings: "wdth" 112; text-decoration: none; }
+  .B-btn.ghost { background: transparent; color: var(--creme); box-shadow: inset 0 0 0 2px var(--creme); }
+  .B-btn.small { padding: 12px 20px; font-size: 14px; }
+  .B-hero { position: relative; padding: 48px 64px 0; }
+  .B-h1 { font-size: 86px; line-height: 1; color: var(--creme); max-width: 900px; }
+  .B-h1 em { font-style: normal; color: var(--amarelo); }
+  .B-sub { font-size: 21px; line-height: 1.5; margin: 30px 0 34px; max-width: 640px; color: #e3ecdf; }
+  .B-tag { position: absolute; right: 80px; top: 120px; width: 330px; background: var(--creme); color: var(--preto); border-radius: 26px; padding: 26px 28px; transform: rotate(4deg); box-shadow: 0 18px 0 -6px var(--verde-esc); }
+  .B-tag .hole { position: absolute; top: 18px; right: 22px; width: 18px; height: 18px; border-radius: 50%; background: var(--verde); }
+
+  #B-post { width: 1080px; height: 1350px; padding: 72px; background: var(--amarelo); color: var(--preto); display: flex; flex-direction: column; }
+  .B-post-h { font-size: 122px; line-height: .93; color: var(--verde); margin-top: 40px; }
+  .B-bubbles { margin-top: auto; display: flex; flex-direction: column; gap: 16px; }
+  .B-bubble { align-self: flex-start; background: #fff; border-radius: 30px 30px 30px 6px; padding: 22px 30px; font-size: 30px; font-weight: 600; max-width: 760px; box-shadow: 0 6px 0 rgba(0,0,0,.12); }
+  .B-bubble small { display: block; font-size: 19px; font-weight: 600; color: #8a8576; margin-top: 4px; }
+  .B-post-foot { display: flex; justify-content: space-between; align-items: center; margin-top: 46px; }
+
+  /* ============ RECOMENDAÇÃO ============ */
+  #comparativo { width: 1600px; height: 900px; display: grid; grid-template-columns: 1fr 1fr; }
+  #comparativo > div { position: relative; overflow: hidden; }
+  #comparativo .tag { position: absolute; top: 24px; left: 24px; z-index: 2; font: 600 16px "IBM Plex Mono"; background: #15140f; color: #fff; padding: 8px 12px; }
+  #comparativo img { width: 100%; height: 100%; object-fit: cover; object-position: left top; }
+</style>
+</head>
+<body>
+
+<svg width="0" height="0" style="position:absolute">
+  <defs>
+    <clipPath id="dm-counter"><path d="M121 116H300A211 209 0 0 1 300 534H121Z"/></clipPath>
+    <symbol id="dm" viewBox="0 0 630 655">
+      <path fill="currentColor" fill-rule="evenodd" d="M20 18H300A310 309 0 0 1 300 636H20Z M107 102H300A225 223 0 0 1 300 548H107Z"/>
+      <g clip-path="url(#dm-counter)" fill="currentColor">
+        <path d="M140 145L294 319L448 145V221L294 395L140 221Z"/>
+        <path d="M140 266L197 330V520H140Z"/>
+        <path d="M448 266L391 330V520H448Z"/>
+      </g>
+    </symbol>
+    <symbol id="dm-fiel" viewBox="0 0 630 655">
+      <path fill="currentColor" fill-rule="evenodd" d="M20 18H300A310 309 0 0 1 300 636H20Z M107 102H300A225 223 0 0 1 300 548H107Z"/>
+      <path fill="currentColor" d="M140 145 L295 320 L448 150 L448 232 L295 408 L140 232Z"/>
+      <path fill="currentColor" d="M140 282 L197 346 L197 518 L140 518Z"/>
+      <path fill="currentColor" d="M448 282 L391 346 L391 518 L448 518Z"/>
+    </symbol>
+  </defs>
+</svg>
+
+<!-- ===================== LOGO ===================== -->
+<p class="label">00 · Logo: atual × vetor fiel × evolução proposta</p>
+<section class="artboard" id="logo-evolucao">
+  <h2>O símbolo DM fica. Muda o acabamento.<small>Proposta: manter o desenho do monograma e trocar o arquivo-mestre. Hoje só existem PNGs com textura metálica gerada por IA.</small></h2>
+  <div class="lg-col">
+    <div class="lg-box" style="background:#0b1424"><img src="../../../dumentre-website-v2/logo-dumentre-minimalist-d-and-m-letters-blue-white.png" alt=""></div>
+    <p class="lg-cap"><b>Atual.</b> PNG 2,4 MB, metal azul, vinheta e sombra. Não escala, não imprime em uma cor, não vira favicon nítido.</p>
+  </div>
+  <div class="lg-col">
+    <div class="lg-box"><svg class="dm" width="280" height="291" style="color:#15140f"><use href="#dm-fiel"/></svg></div>
+    <p class="lg-cap"><b>Vetor fiel.</b> O mesmo desenho redesenhado em SVG (sobreposição conferida com o PNG do Inkscape). Já resolve 80% do problema.</p>
+  </div>
+  <div class="lg-col">
+    <div class="lg-box"><svg class="dm" width="280" height="291" style="color:#15140f"><use href="#dm"/></svg></div>
+    <p class="lg-cap"><b>Evolução (opcional).</b> M com traço igual nas diagonais e hastes (57 u), e o recorte do M contra o arco do D com folga constante. Mesma silhueta.</p>
+  </div>
+  <div></div>
+  <div class="lg-sizes" style="grid-column: 2 / 4">
+    <svg class="dm" width="96" height="100"><use href="#dm"/></svg>
+    <svg class="dm" width="48" height="50"><use href="#dm"/></svg>
+    <svg class="dm" width="32" height="33"><use href="#dm"/></svg>
+    <svg class="dm" width="16" height="17"><use href="#dm"/></svg>
+    <span class="lg-cap" style="margin-left:12px">96 · 48 · 32 · 16 px</span>
+    <span style="width:40px"></span>
+    <span style="background:#2236f5;color:#f4f1ea;padding:14px;display:inline-grid"><svg class="dm" width="44" height="46"><use href="#dm"/></svg></span>
+    <span style="background:#0e4d33;color:#ffd43b;padding:14px;display:inline-grid"><svg class="dm" width="44" height="46"><use href="#dm"/></svg></span>
+  </div>
+</section>
+
+<!-- ===================== DIREÇÃO A ===================== -->
+<p class="label">A1 · Direção A — Ficha Técnica (prancha)</p>
+<section class="artboard A" id="A-board">
+  <div class="grid-bg"></div>
+  <div style="position:relative">
+    <div class="eyebrow"><b>Direção A</b><span>Ficha Técnica</span><span>Valores: precisão · transparência · prova</span></div>
+    <h1 class="A-title">Engenharia<br>à vista.</h1>
+    <p class="A-lead">A Dumentre mostra como o trabalho é feito: prazo, escopo, código e números ficam expostos como numa ficha técnica. Papel, tinta e um azul-cobalto herdado do logo atual, usado como caneta, nunca como fundo inteiro. Para o dono de negócio, a mensagem é <span class="hl">"aqui não tem surpresa"</span>.</p>
+    <div class="A-values"><span>Escopo claro</span><span>Prazo fechado</span><span>O código é seu</span><span>Monitorado 24 h</span></div>
+    <div style="margin-top:44px" class="A-lockup">
+      <svg class="dm" width="86" height="89"><use href="#dm"/></svg>
+      <span class="A-wordmark" style="font-size:84px">dumentre</span>
+    </div>
+    <p class="mono" style="font-size:13px;color:#6b675e;margin-top:14px">Wordmark: Schibsted Grotesk 800, caixa baixa, tracking −0,05 em. Símbolo à altura das ascendentes.</p>
+  </div>
+  <div style="position:relative;display:flex;flex-direction:column;gap:20px">
+    <div class="A-swatches">
+      <div class="A-sw" style="background:#f4f1ea">Papel<br>#F4F1EA<br>fundo</div>
+      <div class="A-sw" style="background:#15140f;color:#f4f1ea">Tinta<br>#15140F<br>texto, bordas</div>
+      <div class="A-sw" style="background:#2236f5;color:#fff">Cobalto<br>#2236F5<br>ação, marca</div>
+      <div class="A-sw" style="background:#eaf05a">Marca-texto<br>#EAF05A<br>só destaque</div>
+      <div class="A-sw" style="background:#6b675e;color:#f4f1ea">Grafite<br>#6B675E<br>secundário</div>
+    </div>
+    <div class="A-type">
+      <span class="k">Display</span><span style="font-weight:800;font-size:40px;letter-spacing:-.04em;line-height:1;white-space:nowrap">Schibsted Grotesk 800</span>
+      <span class="k">Texto</span><span style="font-size:19px;line-height:1.45">Schibsted Grotesk 400/500. Nasceu num jornal norueguês: legível, firme, com personalidade sem enfeite.</span>
+      <span class="k">Anotação</span><span class="mono" style="font-size:16px">IBM Plex Mono 500 — prazos, preços, rótulos, legendas técnicas</span>
+    </div>
+    <div class="A-apps">
+      <div class="A-avatar"><svg class="dm" width="84" height="87"><use href="#dm"/></svg></div>
+      <div class="A-card">
+        <div class="A-lockup" style="color:#f4f1ea"><svg class="dm" width="34" height="35"><use href="#dm"/></svg><span class="A-wordmark" style="font-size:34px">dumentre</span></div>
+        <div class="mono">Luan Cardoso · engenharia e produto<br>+55 11 93621-7352 · dumentre.com</div>
+        <span class="A-callout" style="right:20px;top:22px;color:#eaf05a"><i style="background:#eaf05a;color:#15140f">1</i>cartão 90×50</span>
+      </div>
+    </div>
+  </div>
+  <div style="grid-column:1/-1;position:relative;border-top:1.5px solid var(--tinta);padding-top:26px;display:flex;gap:28px;align-items:center;flex-wrap:wrap">
+    <span class="eyebrow" style="width:100%"><b>Componentes</b><span>borda 1,5 px · sombra dura deslocada · cantos retos</span></span>
+    <a class="A-btn primary">Falar no WhatsApp</a><a class="A-btn">Ver ofertas e preços</a>
+    <span class="mono" style="font-size:14px;border:1.5px solid var(--tinta);padding:8px 12px">Prazo: 7 dias úteis</span>
+    <span class="mono" style="font-size:14px;background:var(--cobalto-claro);color:var(--cobalto);padding:8px 12px">✓ no ar</span>
+    <span class="A-callout" style="position:static"><i>1</i>anotação numerada</span>
+    <span style="font-weight:800;font-size:30px;letter-spacing:-.03em">R$ 2.900 <span class="mono" style="font-size:14px;font-weight:500;color:var(--grafite)">preço fechado</span></span>
+  </div>
+</section>
+
+<p class="label">A2 · Direção A — tela do site (desktop 1440)</p>
+<section class="artboard A" id="A-site">
+  <nav class="A-nav">
+    <div class="A-lockup"><svg class="dm" width="34" height="35"><use href="#dm"/></svg><span class="A-wordmark" style="font-size:30px">dumentre</span></div>
+    <ul><li>Ofertas</li><li>Cases</li><li>Como funciona</li><li>Diferenciais</li><li>FAQ</li></ul>
+    <a class="A-btn small primary">Falar no WhatsApp</a>
+  </nav>
+  <div class="A-hero">
+    <div class="grid-bg" style="top:0;opacity:.35"></div>
+    <div style="position:relative">
+      <div class="eyebrow"><b>Dumentre</b><span>Sites · sistemas · automações · São Paulo</span></div>
+      <h1 class="A-h1" style="margin-top:22px">Sites, sistemas e automações inteligentes para empresas que querem <span class="hl">vender, atender e operar melhor.</span></h1>
+      <p class="A-sub">A Dumentre cria soluções digitais enxutas, bem construídas e pensadas para gerar oportunidades comerciais hoje e evoluir junto com o seu negócio.</p>
+      <div style="display:flex;gap:18px"><a class="A-btn primary">Falar no WhatsApp</a><a class="A-btn">Ver ofertas e preços</a></div>
+      <div class="A-meta"><span>Conversa inicial sem compromisso</span><span>Estudo de viabilidade técnica</span></div>
+    </div>
+    <div style="position:relative;padding-top:10px">
+      <div class="A-spec">
+        <div class="A-spec-head"><span>Case nº 01 · Julinho Fundamentos</span><span>Escola de futebol · Vila Ema</span></div>
+        <div class="A-spec-img"><img src="assets/julinho-desktop.png" alt=""></div>
+        <div class="A-spec-rows">
+          <div><div class="k">Entrega</div><div class="v">Site + campanha</div></div>
+          <div><div class="k">Stack</div><div class="v">Next.js · Cloudflare</div></div>
+          <div><div class="k">Código</div><div class="v">do cliente</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<p class="label">A3 · Direção A — post 4:5</p>
+<section class="artboard A" id="A-post">
+  <div class="grid-bg" style="opacity:.3"></div>
+  <div class="A-post-top" style="position:relative"><span>Ficha nº 003 · Atendimento</span><span>dumentre.com</span></div>
+  <h2 class="A-post-h" style="position:relative">Enquanto você atende o cliente da frente, <span class="hl">quem responde o do WhatsApp?</span></h2>
+  <div class="A-log" style="position:relative">
+    <div><span class="t">19:42</span><span>"Quanto custa a aula experimental?"</span><span class="s no">sem resposta</span></div>
+    <div><span class="t">21:15</span><span>"Vocês abrem sábado?"</span><span class="s no">sem resposta</span></div>
+    <div><span class="t">07:03</span><span>"Já fechei com outro, obrigado."</span><span class="s no">perdido</span></div>
+  </div>
+  <div class="A-post-foot" style="position:relative">
+    <div class="A-lockup"><svg class="dm" width="46" height="48"><use href="#dm"/></svg><span class="A-wordmark" style="font-size:44px;font-family:'Schibsted Grotesk'">dumentre</span></div>
+    <span style="color:#2236f5">Atendente com IA →</span>
+  </div>
+</section>
+
+<!-- ===================== DIREÇÃO B ===================== -->
+<p class="label">B1 · Direção B — Letreiro de Bairro (prancha)</p>
+<section class="artboard B" id="B-board">
+  <div>
+    <div class="eyebrow">Direção B · Letreiro de Bairro · Valores: proximidade · rapidez · bairro</div>
+    <h1 class="B-title cond">Tecnologia<br>de bairro.</h1>
+    <p class="B-lead">A Dumentre fala como o comércio de rua: letreiro grande, preço na etiqueta, carimbo de prazo. Verde de feira, amarelo de placa e creme de papel de pão. Para o dono de negócio, a mensagem é "a gente é daqui e resolve rápido".</p>
+    <div class="B-values"><span>Pronto em 7 dias</span><span>Preço na etiqueta</span><span>Feito em SP</span></div>
+    <div style="margin-top:44px" class="B-lockup">
+      <svg class="dm" width="86" height="89" style="color:#ffd43b"><use href="#dm"/></svg>
+      <span class="cond" style="font-size:112px;line-height:.8;color:#fff4da">Dumentre</span>
+    </div>
+    <p style="font-size:13px;margin-top:14px;color:#cfe0d3">Wordmark: Archivo Condensed Black (largura 62), caixa alta. Símbolo em amarelo.</p>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:20px">
+    <div class="B-swatches">
+      <div class="B-sw" style="background:#0e4d33">Verde-feira<br>#0E4D33<br>fundo</div>
+      <div class="B-sw" style="background:#ffd43b;color:#121212">Amarelo-placa<br>#FFD43B<br>ação, título</div>
+      <div class="B-sw" style="background:#fff4da;color:#121212">Creme<br>#FFF4DA<br>texto, cartões</div>
+      <div class="B-sw" style="background:#ee4b2b">Tomate<br>#EE4B2B<br>carimbo</div>
+      <div class="B-sw" style="background:#121212">Preto<br>#121212<br>texto</div>
+    </div>
+    <div class="B-type">
+      <span class="k">Display</span><span class="cond" style="font-size:52px;line-height:.95;white-space:nowrap">Archivo Condensed 900</span>
+      <span class="k">Texto</span><span style="font-size:19px;line-height:1.45">Archivo 400/600 na largura normal. Uma família só, com o eixo de largura fazendo o contraste.</span>
+      <span class="k">Selo</span><span class="wide" style="font-size:17px;font-weight:800;text-transform:uppercase;letter-spacing:.06em">Archivo Expanded 800</span>
+    </div>
+    <div class="B-apps">
+      <div class="B-avatar"><svg class="dm" width="84" height="87"><use href="#dm"/></svg></div>
+      <div class="B-card" style="position:relative">
+        <div class="B-lockup"><svg class="dm" width="34" height="35" style="color:#0e4d33"><use href="#dm"/></svg><span class="cond" style="font-size:44px;line-height:.8;color:#0e4d33">Dumentre</span></div>
+        <div style="font-size:14px;font-weight:600;line-height:1.5">Luan Cardoso · sites e automações<br>+55 11 93621-7352 · dumentre.com</div>
+        <div class="B-stamp" style="right:22px;top:-22px;width:92px;height:92px"><span class="cond" style="font-size:22px">7 dias<br><span style="font-size:13px">no ar</span></span></div>
+      </div>
+    </div>
+  </div>
+  <div style="grid-column:1/-1;border-top:2px solid rgba(255,244,218,.3);padding-top:26px;display:flex;gap:24px;align-items:center;flex-wrap:wrap;position:relative">
+    <span class="eyebrow" style="width:100%">Componentes · pílulas · etiquetas · carimbos · cantos 22 px</span>
+    <a class="B-btn">Falar no WhatsApp</a><a class="B-btn ghost">Ver ofertas e preços</a>
+    <span style="background:#fff4da;color:#0e4d33;border-radius:14px;padding:10px 16px;font-weight:700">Prazo: 7 dias úteis</span>
+    <span class="cond" style="font-size:44px;color:#ffd43b">R$ 2.900</span>
+    <div class="B-stamp" style="position:relative;width:110px;height:110px"><span class="cond" style="font-size:26px">Feito<br>em SP</span></div>
+  </div>
+</section>
+
+<p class="label">B2 · Direção B — tela do site (desktop 1440)</p>
+<section class="artboard B" id="B-site">
+  <nav class="B-nav">
+    <div class="B-lockup"><svg class="dm" width="36" height="37" style="color:#ffd43b"><use href="#dm"/></svg><span class="cond" style="font-size:44px;line-height:.8">Dumentre</span></div>
+    <ul><li>Ofertas</li><li>Cases</li><li>Como funciona</li><li>Diferenciais</li><li>FAQ</li></ul>
+    <a class="B-btn small">Falar no WhatsApp</a>
+  </nav>
+  <div class="B-hero">
+    <h1 class="B-h1 cond">Sites, sistemas e automações inteligentes para empresas que querem <em>vender, atender e operar melhor.</em></h1>
+    <p class="B-sub">A Dumentre cria soluções digitais enxutas, bem construídas e pensadas para gerar oportunidades comerciais hoje e evoluir junto com o seu negócio.</p>
+    <div style="display:flex;gap:16px"><a class="B-btn">Falar no WhatsApp</a><a class="B-btn ghost">Ver ofertas e preços</a></div>
+    <div class="B-tag">
+      <span class="hole"></span>
+      <div class="wide" style="font-size:13px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:#0e4d33">Oferta da casa</div>
+      <div class="cond" style="font-size:64px;line-height:.86;margin:10px 0 12px;color:#0e4d33">Site no ar em 7 dias</div>
+      <div style="font-size:16px;line-height:1.4">Texto, visual, Google e WhatsApp. Preço fechado.</div>
+      <div class="cond" style="font-size:44px;margin-top:14px;color:#ee4b2b">R$ 2.900</div>
+    </div>
+  </div>
+</section>
+
+<p class="label">B3 · Direção B — post 4:5</p>
+<section class="artboard B" id="B-post">
+  <div style="display:flex;justify-content:space-between;align-items:center">
+    <div class="B-lockup"><svg class="dm" width="46" height="48" style="color:#0e4d33"><use href="#dm"/></svg><span class="cond" style="font-size:56px;line-height:.8;color:#0e4d33">Dumentre</span></div>
+    <span class="wide" style="font-size:18px;font-weight:800;letter-spacing:.08em;text-transform:uppercase">Atendimento</span>
+  </div>
+  <h2 class="B-post-h cond">Enquanto você atende o cliente da frente, quem responde o do WhatsApp?</h2>
+  <div class="B-bubbles">
+    <div class="B-bubble">Quanto custa a aula experimental?<small>19:42 · sem resposta</small></div>
+    <div class="B-bubble">Vocês abrem sábado?<small>21:15 · sem resposta</small></div>
+    <div class="B-bubble" style="background:#ee4b2b;color:#fff4da">Já fechei com outro, obrigado.<small style="color:#ffd9cf">07:03 · perdido</small></div>
+  </div>
+  <div class="B-post-foot">
+    <span style="font-size:24px;font-weight:700">dumentre.com</span>
+    <span class="B-btn" style="background:#0e4d33;color:#ffd43b">Atendente com IA</span>
+  </div>
+</section>
+
+</body>
+</html>

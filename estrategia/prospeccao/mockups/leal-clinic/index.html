@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>Proposta de site — Leal Clinic Odontologia (estudo Dumentre)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400..700&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root { --bg:#f7f3ee; --card:#fffdf9; --ink:#1d2b2a; --teal:#0f5257; --teal-2:#147a7f; --sand:#e9dfd2; --coral:#e2725b; --muted:#5b6866; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  html { scroll-behavior:smooth; }
+  body { font-family:"Figtree",system-ui,sans-serif; background:var(--bg); color:var(--ink); font-size:17px; line-height:1.55; }
+  a { color:inherit; }
+  .proposal { position:sticky; top:0; z-index:50; background:#1d2b2a; color:#f7f3ee; font-size:13px; padding:9px 20px; text-align:center; }
+  .proposal b { color:#ffc9bb; }
+  .wrap { max-width:1160px; margin:0 auto; padding:0 24px; }
+  header.top { display:flex; justify-content:space-between; align-items:center; padding:22px 0; }
+  .brand { font-family:"Fraunces",serif; font-weight:600; font-size:24px; letter-spacing:-.01em; color:var(--teal); }
+  .brand small { display:block; font-family:"Figtree"; font-size:12px; letter-spacing:.14em; text-transform:uppercase; color:var(--muted); font-weight:600; }
+  nav { display:flex; gap:28px; font-size:15px; font-weight:500; }
+  nav a { text-decoration:none; }
+  .btn { display:inline-flex; align-items:center; gap:10px; background:var(--teal); color:#fff; text-decoration:none; font-weight:700; padding:15px 24px; border-radius:999px; transition:background .15s; }
+  .btn:hover { background:var(--teal-2); }
+  .btn.ghost { background:transparent; color:var(--teal); box-shadow:inset 0 0 0 2px var(--teal); }
+  .hero { display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center; padding:56px 0 88px; }
+  .kicker { font-size:13px; letter-spacing:.14em; text-transform:uppercase; color:var(--coral); font-weight:700; }
+  h1 { font-family:"Fraunces",serif; font-weight:500; font-size:clamp(38px,5vw,64px); line-height:1.04; letter-spacing:-.02em; margin:16px 0 20px; }
+  h1 em { font-style:italic; color:var(--teal); }
+  .lead { font-size:19px; color:var(--muted); max-width:32em; }
+  .cta-row { display:flex; gap:14px; flex-wrap:wrap; margin-top:30px; }
+  .trust { display:flex; gap:22px; margin-top:28px; font-size:14px; color:var(--muted); flex-wrap:wrap; }
+  .trust span::before { content:"●"; color:var(--coral); margin-right:8px; font-size:10px; vertical-align:2px; }
+  .hero-art { position:relative; aspect-ratio:4/5; border-radius:28px 28px 220px 28px; background:linear-gradient(160deg,#cfe3e1 0%,#e9dfd2 100%); overflow:hidden; }
+  .hero-art .photo-note { position:absolute; inset:auto 110px 20px 20px; background:rgba(255,253,249,.92); border-radius:16px; padding:14px 16px; font-size:13px; color:var(--muted); }
+  .hero-art svg { position:absolute; left:50%; top:42%; transform:translate(-50%,-50%); width:52%; opacity:.9; }
+  .hours { position:absolute; top:22px; left:22px; background:var(--card); border-radius:16px; padding:14px 16px; box-shadow:0 10px 30px rgba(15,82,87,.12); font-size:14px; }
+  .hours b { display:block; font-size:16px; color:var(--teal); }
+  section { padding:88px 0; }
+  .sec-head { max-width:640px; margin-bottom:44px; }
+  h2 { font-family:"Fraunces",serif; font-weight:500; font-size:clamp(30px,3.6vw,44px); line-height:1.1; letter-spacing:-.015em; margin-top:10px; }
+  .services { display:grid; grid-template-columns:repeat(3,1fr); gap:20px; }
+  .svc { background:var(--card); border-radius:22px; padding:28px; border:1px solid var(--sand); }
+  .svc .ico { width:46px; height:46px; border-radius:14px; background:#dcebea; color:var(--teal); display:grid; place-items:center; margin-bottom:18px; }
+  .svc h3 { font-size:20px; margin-bottom:8px; }
+  .svc p { color:var(--muted); font-size:15.5px; }
+  .band { background:var(--teal); color:#f7f3ee; border-radius:32px; padding:56px; display:grid; grid-template-columns:1fr 1fr; gap:48px; }
+  .band h2 { color:#fff; }
+  .steps { display:grid; gap:18px; counter-reset:s; }
+  .steps li { list-style:none; display:grid; grid-template-columns:44px 1fr; gap:14px; align-items:start; }
+  .steps li::before { counter-increment:s; content:counter(s); width:44px; height:44px; border-radius:50%; background:#f7f3ee; color:var(--teal); display:grid; place-items:center; font-weight:700; font-family:"Fraunces"; font-size:20px; }
+  .steps b { display:block; font-size:18px; }
+  .steps span { color:#cfe3e1; font-size:15.5px; }
+  .faq details { background:var(--card); border:1px solid var(--sand); border-radius:18px; padding:20px 24px; margin-bottom:12px; }
+  .faq summary { font-weight:700; cursor:pointer; font-size:17.5px; }
+  .faq p { color:var(--muted); margin-top:10px; }
+  .visit { display:grid; grid-template-columns:1fr 1fr; gap:24px; }
+  .map { border-radius:24px; background:repeating-linear-gradient(45deg,#e9dfd2 0 12px,#efe7dc 12px 24px); min-height:300px; display:grid; place-items:center; color:var(--muted); font-size:14px; text-align:center; padding:20px; }
+  .card { background:var(--card); border-radius:24px; padding:32px; border:1px solid var(--sand); }
+  .card dt { font-size:12px; letter-spacing:.12em; text-transform:uppercase; color:var(--muted); font-weight:700; margin-top:16px; }
+  .card dd { font-size:18px; }
+  footer { padding:40px 0 100px; color:var(--muted); font-size:14px; border-top:1px solid var(--sand); }
+  .float { position:fixed; right:20px; bottom:20px; background:#1f8f4e; color:#fff; border-radius:999px; padding:14px 20px; font-weight:700; text-decoration:none; box-shadow:0 10px 24px rgba(0,0,0,.18); }
+  .todo { background:#fff1c7; padding:0 4px; border-radius:4px; }
+  @media (max-width:860px) {
+    .proposal { font-size:11.5px; padding:7px 14px; }
+    header.top .btn { padding:11px 16px; font-size:14px; white-space:nowrap; }
+    .brand small { letter-spacing:.08em; }
+    nav { display:none; }
+    .hero, .band, .visit { grid-template-columns:1fr; }
+    .hero { padding-top:24px; gap:36px; }
+    .services { grid-template-columns:1fr; }
+    .band { padding:32px 24px; }
+    section { padding:64px 0; }
+    .cta-row .btn { flex:1 1 100%; justify-content:center; }
+  }
+</style>
+</head>
+<body>
+<div class="proposal"><b>PROPOSTA</b> · Estudo de site feito pela Dumentre para apresentar à Leal Clinic Odontologia. <b>Não é o site oficial.</b> Textos marcados em amarelo precisam ser confirmados pela clínica.</div>
+
+<div class="wrap">
+  <header class="top">
+    <div class="brand">Leal Clinic<small>Odontologia · São Mateus</small></div>
+    <nav><a href="#tratamentos">Tratamentos</a><a href="#primeira-consulta">Primeira consulta</a><a href="#duvidas">Dúvidas</a><a href="#onde">Onde estamos</a></nav>
+    <a class="btn" href="#onde">Agendar avaliação</a>
+  </header>
+
+  <div class="hero">
+    <div>
+      <p class="kicker">Dentista em São Mateus · zona leste</p>
+      <h1>Cuidado com o seu sorriso, <em>perto de casa.</em></h1>
+      <p class="lead">Avaliação sem pressa, explicação clara de cada etapa e orçamento por escrito antes de começar. Na Avenida Mateo Bei, fácil de chegar de ônibus ou de carro.</p>
+      <div class="cta-row">
+        <a class="btn" href="#onde">Agendar pelo WhatsApp</a>
+        <a class="btn ghost" href="#tratamentos">Ver tratamentos</a>
+      </div>
+      <div class="trust"><span>Orçamento por escrito</span><span>Atendimento com hora marcada</span><span class="todo">Convênios: confirmar</span></div>
+    </div>
+    <div class="hero-art" aria-label="Espaço para foto real da recepção ou da equipe">
+      <div class="hours"><b>Seg a sex · <span class="todo">9h–19h</span></b>Sáb · <span class="todo">9h–13h</span></div>
+      <svg viewBox="0 0 120 140" fill="none" stroke="#0f5257" stroke-width="5" stroke-linecap="round" stroke-linejoin="round"><path d="M60 22c-10-10-30-12-40 0-12 14-6 36 0 52 5 14 6 34 12 46 4 8 12 6 14-4 2-12 6-26 14-26s12 14 14 26c2 10 10 12 14 4 6-12 7-32 12-46 6-16 12-38 0-52-10-12-30-10-40 0z"/></svg>
+      <p class="photo-note">Aqui entra uma foto real da equipe ou do consultório (sem banco de imagem).</p>
+    </div>
+  </div>
+</div>
+
+<section id="tratamentos">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">Tratamentos</p><h2>O que você resolve aqui</h2></div>
+    <div class="services">
+      <div class="svc"><div class="ico">✦</div><h3>Limpeza e prevenção</h3><p>Check-up, limpeza e orientação para evitar tratamento grande depois.</p></div>
+      <div class="svc"><div class="ico">◐</div><h3>Restaurações</h3><p>Tratamento de cáries com resina da cor do dente.</p></div>
+      <div class="svc"><div class="ico">⌁</div><h3>Canal</h3><p>Alívio da dor e preservação do dente, com explicação de cada sessão.</p></div>
+      <div class="svc"><div class="ico">▤</div><h3>Implantes e próteses</h3><p>Planejamento com exame e orçamento por etapas. <span class="todo">confirmar oferta</span></p></div>
+      <div class="svc"><div class="ico">≋</div><h3>Aparelho ortodôntico</h3><p>Aparelho fixo ou alinhadores, com manutenção mensal. <span class="todo">confirmar oferta</span></p></div>
+      <div class="svc"><div class="ico">☼</div><h3>Clareamento</h3><p>Clareamento supervisionado, no consultório ou em casa. <span class="todo">confirmar oferta</span></p></div>
+    </div>
+  </div>
+</section>
+
+<section id="primeira-consulta">
+  <div class="wrap">
+    <div class="band">
+      <div><p class="kicker" style="color:#ffc9bb">Primeira consulta</p><h2>Sem surpresa no orçamento.</h2><p style="color:#cfe3e1;margin-top:16px">Muita gente adia o dentista por medo do preço. Aqui você sai da avaliação sabendo o que precisa, em que ordem e quanto custa.</p></div>
+      <ol class="steps">
+        <li><div><b>Você agenda pelo WhatsApp</b><span>Responde 3 perguntas rápidas e escolhe o horário.</span></div></li>
+        <li><div><b>Avaliação com calma</b><span>Exame, fotos e conversa sobre o que incomoda.</span></div></li>
+        <li><div><b>Plano por escrito</b><span>Etapas, prazos e valores antes de começar.</span></div></li>
+      </ol>
+    </div>
+  </div>
+</section>
+
+<section id="duvidas" class="faq">
+  <div class="wrap" style="max-width:860px">
+    <div class="sec-head"><p class="kicker">Dúvidas frequentes</p><h2>Antes de marcar</h2></div>
+    <details open><summary>Vocês atendem convênio?</summary><p><span class="todo">A clínica precisa informar quais convênios aceita.</span></p></details>
+    <details><summary>Quanto custa a avaliação?</summary><p><span class="todo">Valor ou gratuidade a confirmar com a clínica.</span></p></details>
+    <details><summary>Dá para parcelar o tratamento?</summary><p><span class="todo">Formas de pagamento a confirmar.</span></p></details>
+    <details><summary>Atendem urgência (dor de dente)?</summary><p><span class="todo">Política de encaixe a confirmar.</span></p></details>
+  </div>
+</section>
+
+<section id="onde">
+  <div class="wrap">
+    <div class="sec-head"><p class="kicker">Onde estamos</p><h2>Avenida Mateo Bei, São Mateus</h2></div>
+    <div class="visit">
+      <div class="map">Mapa do Google incorporado<br>Av. Mateo Bei, 2861 · São Mateus · São Paulo</div>
+      <div class="card">
+        <dl>
+          <dt>Endereço</dt><dd>Av. Mateo Bei, 2861 · São Mateus, São Paulo</dd>
+          <dt>WhatsApp</dt><dd><span class="todo">número da clínica</span></dd>
+          <dt>Horário</dt><dd><span class="todo">a confirmar</span></dd>
+        </dl>
+        <div style="margin-top:26px"><a class="btn" href="#onde">Agendar avaliação</a></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer><div class="wrap">Leal Clinic Odontologia · Av. Mateo Bei, 2861 · São Mateus · São Paulo · Responsável técnico e CRO: <span class="todo">obrigatório informar</span><br>Proposta de layout preparada pela Dumentre (dumentre.com) em outubro de 2026.</div></footer>
+<a class="float" href="#onde">WhatsApp</a>
+</body>
+</html>

@@ -1,0 +1,543 @@
+<title>Tração Dumentre</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Schibsted+Grotesk:wght@400..900&display=swap">
+<style>
+/* Layout: ficha técnica da própria Dumentre (design.md, direção A). Coluna única de 1120px; decisões primeiro, depois entregáveis, prospects e ofertas. */
+:root {
+  --paper: #f4f1ea; --raised: #fbfaf6; --ink: #15140f; --cobalt: #2236f5; --cobalt-soft: #e4e7fe;
+  --hl: #eaf05a; --graphite: #6b675e; --rule: #d9d4c7; --ok: #1f7a46; --ok-soft: #dcefe2;
+  --warn: #8a5a00; --warn-soft: #fbeccb; --alert: #8a2412; --alert-soft: #f6d9d2; --on-cobalt: #ffffff;
+  --shadow: var(--ink);
+  --sans: "Schibsted Grotesk", system-ui, -apple-system, "Segoe UI", sans-serif;
+  --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) {
+  --paper: #15140f; --raised: #1e1d17; --ink: #f1ede3; --cobalt: #8d9bff; --cobalt-soft: #262b52;
+  --hl: #eaf05a; --graphite: #b3ad9f; --rule: #3a382f; --ok: #7fd3a0; --ok-soft: #173826;
+  --warn: #f0c56a; --warn-soft: #3a2e12; --alert: #ff9e88; --alert-soft: #3d1c15; --on-cobalt: #0c0d1f;
+  --shadow: #000000; color-scheme: dark; } }
+:root[data-theme="dark"] {
+  --paper: #15140f; --raised: #1e1d17; --ink: #f1ede3; --cobalt: #8d9bff; --cobalt-soft: #262b52;
+  --hl: #eaf05a; --graphite: #b3ad9f; --rule: #3a382f; --ok: #7fd3a0; --ok-soft: #173826;
+  --warn: #f0c56a; --warn-soft: #3a2e12; --alert: #ff9e88; --alert-soft: #3d1c15; --on-cobalt: #0c0d1f;
+  --shadow: #000000; color-scheme: dark; }
+
+* { box-sizing: border-box; }
+body { background: var(--paper); color: var(--ink); font: 16px/1.5 var(--sans); margin: 0; }
+.wrap { max-width: 1120px; margin: 0 auto; padding-inline: 20px; padding-block: 0 80px; }
+a { color: var(--cobalt); text-underline-offset: 3px; }
+h1, h2, h3 { text-wrap: balance; margin: 0; }
+.mono { font-family: var(--mono); }
+.eyebrow { font: 500 12px/1.3 var(--mono); letter-spacing: .05em; text-transform: uppercase; color: var(--graphite); }
+.eyebrow b { color: var(--cobalt); font-weight: 600; }
+mark { background: linear-gradient(transparent 12%, var(--hl) 12%, var(--hl) 88%, transparent 88%); color: #15140f; padding: 0 .06em; }
+:focus-visible { outline: 3px solid var(--hl); outline-offset: 2px; }
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; } }
+
+/* topo */
+.top { position: sticky; top: env(safe-area-inset-top, 0px); z-index: 10; background: var(--paper); border-bottom: 1.5px solid var(--ink); }
+.top-in { max-width: 1120px; margin: 0 auto; padding: 12px 20px; display: flex; gap: 16px 28px; align-items: center; flex-wrap: wrap; }
+.lock { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 22px; letter-spacing: -.05em; }
+.lock svg { width: 24px; height: 25px; color: var(--ink); }
+.top nav { display: flex; gap: 18px; flex-wrap: wrap; font-size: 14px; font-weight: 500; }
+.top nav a { color: var(--ink); text-decoration: none; }
+.top nav a:hover { color: var(--cobalt); }
+.meter { margin-left: auto; display: flex; align-items: center; gap: 10px; font: 500 13px var(--mono); }
+.bar { width: 120px; height: 10px; border: 1.5px solid var(--ink); background: var(--raised); }
+.bar i { display: block; height: 100%; background: var(--cobalt); width: 0; transition: width .3s; }
+
+/* hero */
+.hero { padding-block: 44px 28px; display: grid; grid-template-columns: 1.3fr 1fr; gap: 32px; align-items: end; }
+.hero h1 { font-weight: 800; font-size: clamp(32px, 5vw, 52px); line-height: 1; letter-spacing: -.04em; margin-top: 12px; }
+.hero p { color: var(--graphite); margin: 14px 0 0; max-width: 34em; }
+.stats { display: grid; grid-template-columns: repeat(3, 1fr); border: 1.5px solid var(--ink); background: var(--raised); }
+.stat { padding: 14px 16px; border-right: 1.5px solid var(--ink); min-width: 0; }
+.stat:last-child { border-right: 0; }
+.stat b { display: block; font-weight: 800; font-size: 30px; letter-spacing: -.03em; font-variant-numeric: tabular-nums; }
+.stat span { font: 500 11px/1.3 var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--graphite); }
+
+.notice { border: 1.5px dashed var(--graphite); padding: 10px 14px; font-size: 14px; color: var(--graphite); margin-bottom: 20px; }
+
+/* seções */
+section { padding-top: 40px; scroll-margin-top: 80px; }
+.sec-head { display: flex; justify-content: space-between; align-items: end; gap: 16px; flex-wrap: wrap; border-bottom: 1.5px solid var(--ink); padding-bottom: 12px; margin-bottom: 20px; }
+.sec-head h2 { font-weight: 800; font-size: clamp(26px, 3.4vw, 36px); letter-spacing: -.035em; line-height: 1.05; margin-top: 6px; }
+.filters { display: flex; gap: 8px; flex-wrap: wrap; }
+.chip { font: 500 13px var(--mono); border: 1.5px solid var(--ink); background: var(--raised); color: var(--ink); padding: 6px 10px; cursor: pointer; }
+.chip[aria-pressed="true"] { background: var(--ink); color: var(--paper); }
+
+/* decisões */
+.group-title { font: 600 13px var(--mono); text-transform: uppercase; letter-spacing: .05em; margin: 26px 0 10px; display: flex; gap: 10px; align-items: center; }
+.group-title .tag { padding: 2px 8px; background: var(--ink); color: var(--paper); }
+.dec-list { display: grid; gap: 14px; }
+.dec { border: 1.5px solid var(--ink); background: var(--raised); display: grid; grid-template-columns: 1fr 300px; }
+.dec.done { box-shadow: none; }
+.dec:not(.done) { box-shadow: 5px 5px 0 var(--shadow); }
+.dec-main { padding: 16px 18px; min-width: 0; }
+.dec-side { border-left: 1.5px solid var(--ink); padding: 16px 18px; display: flex; flex-direction: column; gap: 10px; min-width: 0; }
+.dec-top { display: flex; gap: 10px; align-items: center; flex-wrap: wrap; }
+.num { font: 600 12px var(--mono); color: var(--cobalt); }
+.pill { font: 600 11px var(--mono); text-transform: uppercase; letter-spacing: .04em; padding: 3px 8px; }
+.pill.pend { background: var(--warn-soft); color: var(--warn); }
+.pill.ok { background: var(--ok-soft); color: var(--ok); }
+.pill.ext { background: var(--cobalt-soft); color: var(--cobalt); }
+.dec h3 { font-weight: 700; font-size: 19px; letter-spacing: -.015em; line-height: 1.25; margin-top: 8px; }
+.dec p { margin: 6px 0 0; color: var(--graphite); font-size: 15px; }
+.dec .where { margin-top: 10px; font: 400 12.5px/1.5 var(--mono); color: var(--graphite); overflow-wrap: anywhere; }
+.opts { display: flex; flex-direction: column; gap: 6px; }
+.opt { text-align: left; font: 600 14px var(--sans); border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); padding: 8px 10px; cursor: pointer; display: flex; gap: 8px; align-items: center; transition: transform .12s; }
+.opt::before { content: ""; width: 12px; height: 12px; border: 1.5px solid var(--ink); flex: none; }
+.opt:hover { transform: translate(1px, 1px); }
+.opt[aria-checked="true"] { background: var(--cobalt); color: var(--on-cobalt); border-color: var(--ink); }
+.opt[aria-checked="true"]::before { background: var(--hl); }
+.opt:disabled { cursor: default; opacity: .7; }
+textarea { width: 100%; min-height: 54px; resize: vertical; font: 14px/1.4 var(--sans); color: var(--ink); background: var(--paper); border: 1.5px solid var(--rule); padding: 8px; }
+textarea:focus { border-color: var(--ink); }
+.saved { font: 400 11.5px var(--mono); color: var(--graphite); min-height: 1em; }
+
+/* entregáveis */
+.deliv { display: grid; gap: 22px; }
+.card { border: 1.5px solid var(--ink); background: var(--raised); }
+.card-head { display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap; padding: 10px 16px; border-bottom: 1.5px solid var(--ink); font: 500 12px var(--mono); text-transform: uppercase; letter-spacing: .04em; }
+.card-head .done-tag { color: var(--ok); }
+.card-body { padding: 16px; display: grid; gap: 14px; }
+.card-body h3 { font-weight: 800; font-size: 22px; letter-spacing: -.025em; }
+.card-body > p { margin: 0; color: var(--graphite); max-width: 70ch; }
+.shots { display: grid; gap: 12px; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); align-items: start; }
+.shots.two { grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); }
+figure { margin: 0; min-width: 0; }
+figure img { width: 100%; height: auto; display: block; border: 1.5px solid var(--ink); background: #fff; }
+figcaption { font: 400 12px/1.4 var(--mono); color: var(--graphite); margin-top: 6px; }
+.facts { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); border-top: 1px solid var(--rule); }
+.facts div { padding: 10px 0; border-bottom: 1px solid var(--rule); min-width: 0; padding-right: 12px; }
+.facts dt { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--graphite); }
+.facts dd { margin: 2px 0 0; font-weight: 700; }
+.path { display: flex; gap: 8px; align-items: center; flex-wrap: wrap; font: 400 12.5px var(--mono); color: var(--graphite); }
+.path code { background: var(--paper); border: 1px solid var(--rule); padding: 3px 6px; overflow-wrap: anywhere; color: var(--ink); }
+.copy { font: 500 12px var(--mono); border: 1.5px solid var(--ink); background: var(--paper); color: var(--ink); padding: 3px 8px; cursor: pointer; }
+.links { display: flex; gap: 10px; flex-wrap: wrap; }
+.go { font: 700 14px var(--sans); text-decoration: none; padding: 9px 14px; border: 1.5px solid var(--ink); background: var(--cobalt); color: var(--on-cobalt); box-shadow: 3px 3px 0 var(--shadow); transition: transform .12s, box-shadow .12s; }
+.go:hover { transform: translate(2px, 2px); box-shadow: 1px 1px 0 var(--shadow); }
+.go.ghost { background: var(--paper); color: var(--ink); }
+.small { font-size: 13px; color: var(--graphite); margin: 0; }
+.dec-links { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 14px; }
+.dec-links .go { font-size: 13.5px; padding: 7px 12px; }
+.vs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.badge-rec { display: inline-block; font: 600 11px var(--mono); background: var(--hl); color: #15140f; padding: 2px 6px; margin-left: 6px; }
+
+/* tabela */
+.tbl-wrap { overflow-x: auto; border: 1.5px solid var(--ink); background: var(--raised); }
+table { border-collapse: collapse; width: 100%; min-width: 860px; font-size: 14px; }
+th, td { text-align: left; padding: 10px 12px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+th { font: 500 11px var(--mono); text-transform: uppercase; letter-spacing: .04em; color: var(--graphite); background: var(--paper); position: sticky; top: 0; }
+td.n { font: 600 12px var(--mono); color: var(--cobalt); font-variant-numeric: tabular-nums; }
+td b { display: block; }
+td small { color: var(--graphite); }
+.prio { font: 600 11px var(--mono); padding: 2px 7px; }
+.prio.A { background: var(--alert-soft); color: var(--alert); }
+.prio.B { background: var(--warn-soft); color: var(--warn); }
+.prio.C { background: var(--cobalt-soft); color: var(--cobalt); }
+select { font: 500 13px var(--sans); color: var(--ink); background: var(--paper); border: 1.5px solid var(--ink); padding: 5px 6px; max-width: 150px; }
+.funnel { display: flex; gap: 0; flex-wrap: wrap; border: 1.5px solid var(--ink); margin-bottom: 14px; background: var(--raised); }
+.funnel div { flex: 1 1 110px; padding: 10px 12px; border-right: 1px solid var(--rule); }
+.funnel div:last-child { border-right: 0; }
+.funnel b { font-weight: 800; font-size: 24px; display: block; font-variant-numeric: tabular-nums; }
+.funnel span { font: 500 11px var(--mono); text-transform: uppercase; color: var(--graphite); }
+
+/* ofertas */
+.offers { display: grid; grid-template-columns: repeat(auto-fit, minmax(230px, 1fr)); gap: 14px; }
+.offer { border: 1.5px solid var(--ink); background: var(--raised); padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+.offer h3 { font-weight: 800; font-size: 19px; letter-spacing: -.02em; }
+.offer .price { font-weight: 800; font-size: 26px; letter-spacing: -.03em; }
+.offer small { font: 400 12px var(--mono); color: var(--graphite); }
+.done-list { columns: 2 280px; gap: 24px; padding: 0; margin: 0; list-style: none; }
+.done-list li { break-inside: avoid; padding: 8px 0 8px 22px; border-bottom: 1px solid var(--rule); position: relative; font-size: 15px; }
+.done-list li::before { content: "✓"; position: absolute; left: 0; color: var(--ok); font-weight: 700; }
+
+@media (max-width: 760px) {
+  .hero { grid-template-columns: 1fr; padding-block: 28px 16px; }
+  .dec { grid-template-columns: 1fr; }
+  .dec-side { border-left: 0; border-top: 1.5px solid var(--ink); }
+  .vs { grid-template-columns: 1fr; }
+  .meter { margin-left: 0; }
+  .top nav { display: none; }
+  .top-in { padding: 10px 16px; }
+  .bar { width: 80px; }
+}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+  <clipPath id="dmc"><path d="M121 116H300A211 209 0 0 1 300 534H121Z"/></clipPath>
+  <symbol id="dm" viewBox="0 0 630 655"><path fill="currentColor" fill-rule="evenodd" d="M20 18H300A310 309 0 0 1 300 636H20Z M107 102H300A225 223 0 0 1 300 548H107Z"/><g clip-path="url(#dmc)" fill="currentColor"><path d="M140 145L294 319L448 145V221L294 395L140 221Z"/><path d="M140 266L197 330V520H140Z"/><path d="M448 266L391 330V520H448Z"/></g></symbol>
+</defs></svg>
+
+<header class="top">
+  <div class="top-in">
+    <div class="lock"><svg><use href="#dm"/></svg>dumentre</div>
+    <nav aria-label="Seções"><a href="#decisoes">Decisões</a><a href="#entregas">Entregas</a><a href="#prospects">Prospects</a><a href="#ofertas">Ofertas</a></nav>
+    <div class="meter" aria-live="polite"><span id="meter-txt">0 de 23 decididas</span><span class="bar"><i id="meter-bar"></i></span></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <div class="hero">
+    <div>
+      <p class="eyebrow"><b>Sessão de tração</b> · 08/10/2026 · tudo local, nada publicado</p>
+      <h1>O que eu fiz e <mark>o que depende de você.</mark></h1>
+      <p>Marque uma opção em cada decisão e, se quiser, deixe uma nota. As escolhas ficam salvas aqui e eu consigo lê-las quando você pedir para seguir.</p>
+    </div>
+    <div class="stats">
+      <div class="stat"><b>8/8</b><span>entregáveis prontos</span></div>
+      <div class="stat"><b id="st-pend">23</b><span>decisões pendentes</span></div>
+      <div class="stat"><b id="st-p0">5</b><span>urgentes (P0)</span></div>
+    </div>
+  </div>
+
+  <p class="notice" id="db-notice" hidden>Nesta visualização as escolhas não estão sendo salvas. Abra pelo claude.ai, logado, para registrar.</p>
+
+  <section id="decisoes" aria-labelledby="h-dec">
+    <div class="sec-head">
+      <div><p class="eyebrow"><b>01</b> Com você</p><h2 id="h-dec">Decisões e aprovações</h2></div>
+      <div class="filters" role="group" aria-label="Filtrar decisões">
+        <button class="chip" data-f="pend" aria-pressed="true">Pendentes</button>
+        <button class="chip" data-f="all" aria-pressed="false">Todas</button>
+        <button class="chip" data-f="done" aria-pressed="false">Decididas</button>
+      </div>
+    </div>
+    <div id="dec-root"></div>
+  </section>
+
+  <section id="entregas" aria-labelledby="h-ent">
+    <div class="sec-head"><div><p class="eyebrow"><b>02</b> Comigo · feito</p><h2 id="h-ent">O que foi entregue</h2></div></div>
+    <div class="deliv">
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 1 · Diagnóstico</span><span class="done-tag">✓ pronto</span></div>
+        <div class="card-body">
+          <h3>Textos bons, cara de template, zero prova</h3>
+          <p>O site atual é azul-marinho com gradiente, sem case, preço ou rosto. Instagram com 0 posts, Facebook e LinkedIn vazios, e a busca por "Dumentre" no Google não traz a empresa. O nome vem do latim <i>dum interim</i>, "enquanto", e virou o gancho da marca.</p>
+          <div class="shots two"><figure><img src="img/site-antigo.jpg" alt="Site atual da Dumentre, azul-marinho" loading="lazy" width="1200" height="750"><figcaption>dumentre.com hoje</figcaption></figure></div>
+          <div class="links"><a class="go" href="docs/estrategia/diagnostico-2026-10.html">Ler o diagnóstico →</a><a class="go ghost" href="docs/briefings/2026-10-08-tracao-dumentre.html">Briefing original</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 3 · Identidade</span><span class="done-tag">✓ pronto · aguarda sua escolha</span></div>
+        <div class="card-body">
+          <h3>Duas direções opostas, mesmo texto nas duas</h3>
+          <p>O símbolo DM foi mantido e ganhou SVG. A recomendação é a A: combina com "escopo claro, código é seu", foge do azul-marinho da categoria e não compete com os cases coloridos.</p>
+          <div class="vs">
+            <figure><img src="img/a-board.jpg" alt="Prancha da direção A, Ficha Técnica" loading="lazy" width="1200" height="750"><figcaption>A · Ficha Técnica <span class="badge-rec">recomendada</span></figcaption></figure>
+            <figure><img src="img/b-board.jpg" alt="Prancha da direção B, Letreiro de Bairro" loading="lazy" width="1200" height="750"><figcaption>B · Letreiro de Bairro</figcaption></figure>
+            <figure><img src="img/a-site.jpg" alt="Tela do site na direção A" loading="lazy" width="1200" height="750"><figcaption>A · site</figcaption></figure>
+            <figure><img src="img/b-site.jpg" alt="Tela do site na direção B" loading="lazy" width="1200" height="750"><figcaption>B · site</figcaption></figure>
+          </div>
+          <div class="shots">
+            <figure><img src="img/a-post.jpg" alt="Post na direção A" loading="lazy" width="540" height="675"><figcaption>A · post</figcaption></figure>
+            <figure><img src="img/b-post.jpg" alt="Post na direção B" loading="lazy" width="540" height="675"><figcaption>B · post</figcaption></figure>
+            <figure><img src="img/logo.jpg" alt="Logo atual, vetor fiel e evolução" loading="lazy" width="1200" height="675"><figcaption>Logo: atual × vetor fiel × evolução</figcaption></figure>
+          </div>
+          <div class="links"><a class="go" href="docs/estrategia/identidade/README.html">Ler a recomendação →</a><a class="go ghost" href="docs/estrategia/identidade/direcoes.html">Pranchas em tamanho real</a><a class="go ghost" href="docs/marca/design.html">design.md</a><a class="go ghost" href="docs/marca/brand.html">brand.md</a><a class="go ghost" href="docs/marca/voice_principles.html">Voz</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 4 · Site novo</span><span class="done-tag">✓ branch local · 102 testes ok</span></div>
+        <div class="card-body">
+          <h3>Mesmos textos, nova cara, com Ofertas e Cases</h3>
+          <p>Branch <span class="mono">redesign/identidade-2026-10</span>, commit local sem push, numa pasta separada para não mexer no seu trabalho não commitado em <span class="mono">main</span>.</p>
+          <div class="shots two">
+            <figure><img src="img/site-desktop.jpg" alt="Site novo no desktop" loading="lazy" width="1200" height="750"><figcaption>Desktop</figcaption></figure>
+            <figure><img src="img/site-ofertas.jpg" alt="Seção de ofertas do site novo" loading="lazy" width="1200" height="1060"><figcaption>Seção Ofertas</figcaption></figure>
+            <figure><img src="img/site-cases.jpg" alt="Seção de cases do site novo" loading="lazy" width="1200" height="1120"><figcaption>Seção Cases (fotos de alunos desfocadas)</figcaption></figure>
+            <figure style="max-width:300px"><img src="img/site-mobile.jpg" alt="Site novo no celular" loading="lazy" width="390" height="844"><figcaption>Celular</figcaption></figure>
+          </div>
+          <div class="links"><a class="go" href="site-novo/index.html">Navegar no site novo →</a><a class="go ghost" href="docs/estrategia/site/README.html">O que mudou e crítica</a></div>
+          <p class="small">Os botões de WhatsApp do site abrem o WhatsApp de verdade. Nada foi publicado.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 5 · Redes</span><span class="done-tag">✓ 9 posts + calendário</span></div>
+        <div class="card-body">
+          <h3>Perfil que já nasce vendendo</h3>
+          <p>Pilares: dor do dono, prova, ensina rápido, oferta com preço, "enquanto". Calendário de 30 dias de 13/10 a 11/11. Legendas prontas.</p>
+          <div class="shots two">
+            <figure><img src="img/grade.jpg" alt="Grade do Instagram com os 9 posts" loading="lazy" width="1200" height="1680"><figcaption>Grade do perfil (mais recente no topo)</figcaption></figure>
+            <div style="display:grid;gap:12px">
+              <figure><img src="img/post-03.jpg" alt="Post Site no ar em 7 dias" loading="lazy" width="540" height="675"><figcaption>Post 3 · oferta</figcaption></figure>
+            </div>
+          </div>
+          <div class="links"><a class="go" href="docs/estrategia/redes/README.html">Estratégia, calendário e legendas →</a><a class="go ghost" href="docs/estrategia/redes/posts/posts.html">Os 9 posts em tamanho real</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 6 · Anúncios</span><span class="done-tag">✓ plano · nada ativado</span></div>
+        <div class="card-body">
+          <h3>Google Pesquisa + Meta para WhatsApp</h3>
+          <p>Teste de ~R$ 945 em 21 dias, só depois do site no ar e da prospecção. Regra de corte: R$ 400 sem conversa qualificada, pausa e revisa.</p>
+          <div class="shots">
+            <figure><img src="img/ad-site.jpg" alt="Criativo Stories site em 7 dias" loading="lazy" width="540" height="960"><figcaption>Stories · Site 7 dias</figcaption></figure>
+            <figure><img src="img/ad-atendente.jpg" alt="Criativo feed atendente com IA" loading="lazy" width="540" height="540"><figcaption>Feed · Atendente IA</figcaption></figure>
+            <figure><img src="img/ad-raiox.jpg" alt="Criativo Stories Raio-X" loading="lazy" width="540" height="960"><figcaption>Stories · Raio-X grátis</figcaption></figure>
+          </div>
+          <div class="links"><a class="go" href="docs/estrategia/anuncios/plano-anuncios.html">Ler o plano de anúncios →</a><a class="go ghost" href="docs/estrategia/anuncios/criativos.html">Criativos em tamanho real</a></div>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="card-head"><span>Entregável 7 · Sites-proposta</span><span class="done-tag">✓ 2 prontos · locais</span></div>
+        <div class="card-body">
+          <h3>"Antes e depois" para levar ao prospect</h3>
+          <p>Marcados como PROPOSTA, sem logo nem fotos dos negócios, com dados a confirmar em amarelo. Mande print, não o arquivo.</p>
+          <div class="shots">
+            <figure><img src="img/leal-antes.jpg" alt="Site atual da Leal Clinic, página Em breve" loading="lazy" width="390" height="844"><figcaption>Leal Clinic hoje: "Em breve"</figcaption></figure>
+            <figure><img src="img/leal-mobile.jpg" alt="Proposta de site Leal Clinic no celular" loading="lazy" width="390" height="844"><figcaption>Leal Clinic · proposta</figcaption></figure>
+            <figure><img src="img/gdr-antes.jpg" alt="Site atual do GDR 7 de Setembro em Flash" loading="lazy" width="390" height="844"><figcaption>GDR hoje: Flash, 2013</figcaption></figure>
+            <figure><img src="img/gdr-mobile.jpg" alt="Proposta de site GDR 7 de Setembro no celular" loading="lazy" width="390" height="844"><figcaption>GDR · proposta</figcaption></figure>
+          </div>
+          <div class="shots two">
+            <figure><img src="img/leal-desktop.jpg" alt="Proposta Leal Clinic no desktop" loading="lazy" width="1200" height="750"><figcaption>Leal Clinic · desktop</figcaption></figure>
+            <figure><img src="img/gdr-desktop.jpg" alt="Proposta GDR no desktop" loading="lazy" width="1200" height="750"><figcaption>GDR 7 de Setembro · desktop</figcaption></figure>
+          </div>
+          <div class="links"><a class="go" href="docs/estrategia/prospeccao/mockups/leal-clinic/index.html">Navegar: Leal Clinic →</a><a class="go" href="docs/estrategia/prospeccao/mockups/gdr-7-de-setembro/index.html">Navegar: GDR 7 de Setembro →</a><a class="go ghost" href="docs/estrategia/prospeccao/README.html">Como usar</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section id="prospects" aria-labelledby="h-pro">
+    <div class="sec-head">
+      <div><p class="eyebrow"><b>03</b> Acompanhar</p><h2 id="h-pro">20 prospects da zona leste</h2></div>
+      <div class="links"><a class="go ghost" href="docs/estrategia/prospeccao/prospects.html">Detalhes e evidências</a><a class="go ghost" href="docs/estrategia/prospeccao/scripts-abordagem.html">Scripts</a></div>
+    </div>
+    <div class="funnel" id="funnel"></div>
+    <div class="tbl-wrap">
+      <table>
+        <thead><tr><th>#</th><th>Negócio</th><th>O que achei</th><th>Oferta</th><th>Contato público</th><th>Status</th></tr></thead>
+        <tbody id="pro-root"></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="ofertas" aria-labelledby="h-of">
+    <div class="sec-head"><div><p class="eyebrow"><b>04</b> Para aprovar na decisão 1</p><h2 id="h-of">Ofertas com preço na etiqueta</h2></div><div class="links"><a class="go ghost" href="docs/estrategia/ofertas.html">Escopo de cada oferta</a><a class="go ghost" href="docs/backlog/README.html">Backlog em texto</a></div></div>
+    <div class="offers">
+      <div class="offer"><span class="eyebrow">Porta de entrada</span><h3>Raio-X Digital</h3><span class="price">R$ 390</span><small>48 h · abatido se fechar em 30 dias</small></div>
+      <div class="offer"><span class="eyebrow">Oferta 01</span><h3>Site no Ar em 7 Dias</h3><span class="price">R$ 2.900</span><small>7 dias úteis · Cuidado Mensal R$ 190/mês</small></div>
+      <div class="offer"><span class="eyebrow">Oferta 02</span><h3>Atendente de WhatsApp com IA</h3><span class="price">R$ 3.500</span><small>10–14 dias úteis · + R$ 390/mês + API repassada</small></div>
+      <div class="offer"><span class="eyebrow">Oferta 03</span><h3>Campanha Pronta</h3><span class="price">R$ 1.490</span><small>5 dias úteis · com Kit de Marca R$ 3.900</small></div>
+      <div class="offer"><span class="eyebrow">Combo</span><h3>Presença Completa</h3><span class="price">R$ 5.900</span><small>14 dias úteis · site + marca + campanha + Google</small></div>
+    </div>
+    <h3 style="font-weight:800;font-size:20px;letter-spacing:-.02em;margin:32px 0 10px">Feito nesta sessão</h3>
+    <ul class="done-list">
+      <li>Diagnóstico de site, marca, redes e oferta</li>
+      <li>4 ofertas + combo com escopo, prazo e preço</li>
+      <li>2 direções visuais renderizadas e recomendação</li>
+      <li>Símbolo DM vetorizado (fiel + evolução)</li>
+      <li><span class="mono">design.md</span>, <span class="mono">brand.md</span> e princípios de voz</li>
+      <li>Site novo em branch local, 102 testes passando</li>
+      <li>Favicons e imagem de compartilhamento novos</li>
+      <li>Estratégia de redes, calendário de 30 dias, 9 posts com legenda</li>
+      <li>Plano de anúncios e 3 criativos</li>
+      <li>20 prospects verificados e scripts de abordagem</li>
+      <li>2 sites-proposta com "antes" registrado</li>
+      <li>Backlog priorizado na knowledge base</li>
+    </ul>
+  </section>
+</main>
+
+<script>
+const DECISIONS = [
+  { id: "d01", p: "P0", ext: false, title: "Aprovar ofertas e preços", why: "Sem preço fechado não dá para prospectar nem publicar o site. Os preços aparecem na seção Ofertas do site novo.", links: [["site-novo/index.html#ofertas", "Ver os preços no site novo"], ["docs/estrategia/ofertas.html", "Escopo de cada oferta"]], opts: ["Aprovar como está", "Aprovar com ajustes (anoto abaixo)", "Rever com o Claude"] },
+  { id: "d21", p: "P0", ext: false, title: "Mostrar o preço no site?", why: "Pesquisei estudos com números: mostrar o preço reduz a quantidade de contatos, mas os que chegam fecham mais. No fim, o número de negócios fica parecido, com bem menos conversa perdida. Minha recomendação é manter visível, depois do case.", links: [["docs/estrategia/pesquisa-preco-visivel.html", "Ler a pesquisa"], ["docs/estrategia/pesquisa-preco-visivel.html#a-conta-que-importa-hockeystack-a-cada-1-000-visitas-na-pagina-de-precos", "A conta em 3 linhas"], ["site-novo/index.html#ofertas", "Ver como está no site"]], opts: ["Manter preço visível", "Mostrar só \"a partir de\"", "Esconder e falar na conversa", "Rever com o Claude"] },
+  { id: "d22", p: "P0", ext: false, title: "Campanha Pronta: texto sem data comemorativa", why: "Você apontou que a maioria não compra por data. Já troquei para \"na próxima ação, seja lançamento, promoção, matrícula ou data especial\" no site e nas ofertas. Falta você confirmar.", links: [["site-novo/index.html#ofertas", "Ver o texto novo no site"], ["docs/estrategia/ofertas.html#2-campanha-pronta-r-1-490-por-campanha-r-3-900-com-kit-de-marca", "Gatilhos da oferta"]], opts: ["Aprovar o texto novo", "Ajustar (anoto abaixo)", "Rever com o Claude"] },
+  { id: "d23", p: "P0", ext: false, title: "Raio-X: formato sem dor de cabeça", why: "O título \"vídeo de 15 minutos\" faz o cliente comparar R$390 com minutos. Proposta: vender o resultado, um relatório com prints anotados do site, Google e Instagram e as 5 correções em ordem, mais um vídeo de tela curto (até 8 min) com a sua voz, sem rosto e nunca com voz de IA. A IA faz a varredura e o rascunho; você revisa e grava, cerca de 40 min no total. Contra o risco de o cliente não gostar: garantia \"não achou útil, devolvo\", que custa no máximo R$390 e tira o medo de quem compra.", links: [["site-novo/index.html#ofertas", "Ver o bloco do Raio-X no site"], ["docs/estrategia/ofertas.html#0-raio-x-digital-r-390-abativel", "Escopo atual do Raio-X"]], opts: ["Relatório + vídeo curto + garantia (recomendado)", "Só relatório escrito, sem vídeo", "Tirar o pago: Raio-X só grátis e curto, como isca", "Rever com o Claude"] },
+  { id: "d02", p: "P0", ext: true, title: "Começar a prospecção pelos 8 de prioridade A", why: "Caminho mais rápido e barato para o primeiro contrato. Cada envio é uma ação sua.", links: [["docs/estrategia/prospeccao/prospects.html#prioridade-a-problema-tecnico-grave-e-verificado", "Ver os 8 de prioridade A"], ["docs/estrategia/prospeccao/scripts-abordagem.html", "Mensagens prontas"], ["#prospects", "Marcar status na tabela"]], opts: ["Liberado, começo esta semana", "Esperar o site novo no ar", "Mudar a lista"] },
+  { id: "d03", p: "P0", ext: true, title: "Avisar a Clínica Sense sobre o domínio com site de apostas", why: "É urgente para eles e abre a conversa com um gesto útil.", links: [["docs/estrategia/prospeccao/prospects.html#prioridade-a-problema-tecnico-grave-e-verificado", "Ver o achado (prospect #1)"], ["docs/estrategia/prospeccao/scripts-abordagem.html#1-whatsapp-achado-tecnico-grave-prioridade-a", "Ver a mensagem pronta"]], opts: ["Pode enviar", "Não enviar"] },
+  { id: "d04", p: "P0", ext: false, title: "Direção visual", why: "Site, posts e anúncios já foram feitos na A.", links: [["docs/estrategia/identidade/direcoes.html", "Ver as duas direções"], ["docs/estrategia/identidade/README.html#recomendacao-direcao-a-ficha-tecnica", "Por que recomendo a A"], ["site-novo/index.html", "Site novo, já na A"]], opts: ["A · Ficha Técnica (recomendada)", "B · Letreiro de Bairro", "A com ajustes (anoto abaixo)"] },
+  { id: "d05", p: "P0", ext: false, title: "Versão do logo", why: "Trocar o PNG metálico por SVG resolve favicon, impressão e redes.", links: [["docs/estrategia/identidade/direcoes.html", "Ver o logo: atual × fiel × evolução"], ["docs/estrategia/identidade/README.html#0-logo-o-simbolo-fica", "Explicação"]], opts: ["Evolução (traço uniforme)", "Vetor fiel ao atual", "Quero redesenhar"] },
+  { id: "d06", p: "P1", ext: true, title: "Autorização da Julinho para usar o case", why: "Projeto pro bono; site e campanha ainda em validação com a escola.", links: [["site-novo/index.html#cases", "Ver o case no site novo"], ["docs/estrategia/site/README.html#antes-de-publicar-decisoes-do-luan", "O que falta para publicar"]], opts: ["Vou pedir por escrito", "Já está autorizado", "Tirar o case por enquanto"] },
+  { id: "d07", p: "P1", ext: false, title: "Rastreamento de WhatsApp não commitado em main", why: "Precisa entrar antes do merge da branch do redesign.", links: [["docs/estrategia/site/README.html", "O que está em main e na branch"]], opts: ["Eu reviso e commito", "Claude commita (com meu ok)", "Descartar"] },
+  { id: "d08", p: "P1", ext: true, title: "Publicar o site novo", why: "Merge e deploy no Cloudflare Pages depois das decisões 4, 6 e 7.", links: [["site-novo/index.html", "Navegar no site novo"], ["docs/estrategia/site/README.html#o-que-mudou", "O que mudou"]], opts: ["Publicar quando 4, 6 e 7 estiverem ok", "Quero revisar ao vivo antes", "Ainda não"] },
+  { id: "d09", p: "P1", ext: false, title: "Handle oficial do Instagram", why: "O site aponta para um, o vault diz que reservou outro.", links: [["docs/estrategia/redes/README.html#configuracao-dos-perfis-antes-do-1-post", "Ver bio e configuração dos perfis"]], opts: ["@dumentre", "@dumentre.co"] },
+  { id: "d10", p: "P1", ext: true, title: "Publicar os 9 posts a partir de 13/10", why: "Perfil com 0 posts derruba a prospecção.", links: [["docs/estrategia/redes/posts/posts.html", "Ver os 9 posts"], ["docs/estrategia/redes/README.html#calendario-de-30-dias-13-10-a-11-11-2026", "Calendário"], ["docs/estrategia/redes/README.html#legendas-dos-9-posts", "Legendas"]], opts: ["Ok, seguir o calendário", "Ajustar posts antes", "Adiar"] },
+  { id: "d11", p: "P1", ext: true, title: "E-mail no domínio contato@dumentre.com", why: "Gmail enfraquece a confiança. Pode ter custo.", links: [["docs/estrategia/diagnostico-2026-10.html#site-dumentre-com", "Onde isso pesa (diagnóstico)"]], opts: ["Criar agora", "Depois do primeiro cliente"] },
+  { id: "d12", p: "P1", ext: false, title: "Texto de lançamento no LinkedIn", why: "Cita a experiência em app de mídia nacional sem nomear o empregador.", links: [["docs/estrategia/redes/README.html#texto-de-lancamento-no-linkedin-perfil-do-luan-13-10", "Ler o texto"]], opts: ["Aprovado", "Ajustar (anoto abaixo)", "Não postar"] },
+  { id: "d13", p: "P1", ext: false, title: "Card \"App de mídia nacional nas lojas\" no site", why: "Prova de capacidade; confirme se pode descrever assim em público.", links: [["site-novo/index.html#cases", "Ver o card no site (abaixo do case)"]], opts: ["Pode usar", "Reescrever", "Remover"] },
+  { id: "d14", p: "P2", ext: true, title: "Verba de teste de anúncios (~R$ 945 em 21 dias)", why: "Só depois do site no ar e do rastreamento.", links: [["docs/estrategia/anuncios/plano-anuncios.html#orcamento-de-teste-sugerido", "Ver o orçamento"], ["docs/estrategia/anuncios/criativos.html", "Ver os criativos"]], opts: ["Aprovar", "Aprovar valor menor", "Não agora"] },
+  { id: "d15", p: "P2", ext: true, title: "Criar GA4/GTM e Pixel da Meta", why: "Sem medir o clique no WhatsApp não dá para saber qual canal paga.", links: [["docs/estrategia/anuncios/plano-anuncios.html#quando-ligar-pre-requisitos", "Ver pré-requisitos"]], opts: ["Fazer junto com o deploy", "Depois"] },
+  { id: "d16", p: "P2", ext: true, title: "Rodar o Planejador de palavras-chave", why: "Volume e CPC reais antes de gastar.", links: [["docs/estrategia/anuncios/plano-anuncios.html#grupos-e-palavras-chave-correspondencia-de-frase-e-exata", "Ver as palavras-chave"]], opts: ["Faço quando criar a conta", "Pular"] },
+  { id: "d17", p: "P2", ext: true, title: "Catálogo e respostas rápidas no WhatsApp Business", why: "É onde a venda acontece; textos prontos nos scripts.", links: [["docs/estrategia/prospeccao/scripts-abordagem.html#respostas-rapidas-para-o-whatsapp-business-da-dumentre", "Ver as respostas rápidas"]], opts: ["Configurar esta semana", "Depois"] },
+  { id: "d18", p: "P2", ext: false, title: "Onde fica a planilha de leads", why: "Data, canal, nicho, oferta, qualificado, proposta, venda.", links: [["docs/estrategia/anuncios/plano-anuncios.html#metricas-e-metas-do-teste", "Ver as colunas da planilha"]], opts: ["Google Sheets", "Notion", "Outro (anoto abaixo)"] },
+  { id: "d19", p: "P2", ext: false, title: "Modelo de proposta e contrato", why: "Escopo, 2 rodadas de ajuste, 50/50, propriedade do código.", links: [["docs/estrategia/ofertas.html", "Ver as ofertas (base do contrato)"]], opts: ["Claude rascunha, eu reviso", "Faço com contador/advogado", "Depois"] },
+  { id: "d20", p: "P2", ext: false, title: "Favicon simplificado para 16 px", why: "No tamanho mínimo o M some.", links: [["docs/estrategia/identidade/direcoes.html", "Ver o símbolo em 16 px"], ["docs/marca/design.html#logo", "Regras do logo"]], opts: ["Só o D", "M mais grosso", "Manter como está"] },
+];
+const P_LABEL = { P0: "Destrava faturamento esta semana", P1: "Publicar site e redes (2 semanas)", P2: "Anúncios e operação (depois do site)" };
+
+const PROSPECTS = [
+  ["A", "Clínica Sense", "Clínica · Tatuapé", "Domínio abre página de cassino online", "Raio-X → Site 7 dias", "(11) 2671-1874"],
+  ["A", "Leal Clinic Odontologia", "Dentista · São Mateus", "Site com página \"Em breve\" da Hostinger", "Site 7 dias (proposta pronta)", "via Google Maps"],
+  ["A", "GDR 7 de Setembro", "Clube · Água Rasa", "Site em Flash, notícias de 2013", "Site + salão (proposta pronta)", "(11) 2966-7611"],
+  ["A", "Org. Contábil Marchiori", "Contabilidade · zona leste", "Página padrão da hospedagem, sem HTTPS", "Site 7 dias", "(11) 2917-0971"],
+  ["A", "Colégio Carlos Brunetti", "Escola · Jd. Bonifácio", "Domínio não existe mais", "Site + matrículas 2027", "(11) 2521-6086"],
+  ["A", "Colégio Califórnia Júnior", "Escola · Tatuapé", "Domínio não existe; e-mail pode estar voltando", "Site + e-mail + matrículas", "(11) 2293-9040"],
+  ["A", "Colégio Olivetano", "Escola · Vila Esperança", "Domínio não existe", "Site + matrículas 2027", "(11) 2957-2178"],
+  ["A", "CãoMania Pet Shop", "Pet · Penha", "778 avaliações e nenhum site oficial", "Atendente IA + Site", "(11) 2646-8146"],
+  ["B", "Colégio Martins Penna", "Escola · Penha", "Certificado não cobre o www", "Raio-X + Cuidado Mensal", "(11) 2641-9953"],
+  ["B", "La Tivoli Restaurante", "Restaurante · Tatuapé", "Domínio não existe", "Site com cardápio", "(11) 2092-4335"],
+  ["B", "Panelão do Norte", "Restaurante · Penha", "Certificado do www venceu em 16/03", "Cuidado Mensal", "(11) 2647-7805"],
+  ["B", "Omegavet", "Veterinária · Itaquera", "Site sem botão de WhatsApp", "Atendente IA", "(11) 2742-2778"],
+  ["B", "Ótica Brasília", "Ótica · Artur Alvim", "Usa o Instagram no lugar de site", "Site + Google Perfil", "(11) 2368-0510"],
+  ["B", "A+ Fitness", "Academia · Tatuapé", "Site sem WhatsApp", "Campanha Pronta", "(11) 91446-8891"],
+  ["C", "Nakê Premium Sushi", "Restaurante · Vila Ema", "Só Instagram", "Site com cardápio", "(11) 2116-3813"],
+  ["C", "Terraço 53 Food Bier", "Bar · Belém", "Só Instagram", "Campanha + site", "(11) 2339-5301"],
+  ["C", "Umami Gastronomia", "Restaurante · Penha", "Só Instagram", "Site com cardápio", "via Instagram"],
+  ["C", "Puru Restaurante", "Restaurante · Penha", "Só Instagram", "Site com cardápio", "via Instagram"],
+  ["C", "Pelos & Patas", "Pet shop · Vila Formosa", "Nenhum site cadastrado", "Site + Atendente IA", "(11) 2269-5215"],
+  ["C", "Dra. Isgislane S. de Oliveira", "Advocacia · Itaquera", "Nenhum site cadastrado", "Site institucional", "(11) 99231-1115"],
+];
+const PRO_STATUS = ["Não contatado", "Contatado", "Respondeu", "Raio-X / proposta", "Fechado", "Descartado"];
+
+const state = { dec: {}, pro: {}, filter: "pend" };
+let db = null;
+let canWrite = true;
+
+function el(tag, attrs = {}, ...kids) {
+  const n = document.createElement(tag);
+  for (const [k, v] of Object.entries(attrs)) {
+    if (k === "class") n.className = v; else if (k === "text") n.textContent = v; else n.setAttribute(k, v);
+  }
+  kids.forEach(k => k != null && n.append(k));
+  return n;
+}
+function fmt(ts) {
+  if (!ts) return "";
+  try { return new Date(ts).toLocaleString("pt-BR", { day: "2-digit", month: "2-digit", hour: "2-digit", minute: "2-digit" }); } catch { return ""; }
+}
+
+function renderMeter() {
+  const done = DECISIONS.filter(d => state.dec[d.id]?.escolha).length;
+  document.getElementById("meter-txt").textContent = `${done} de ${DECISIONS.length} decididas`;
+  document.getElementById("meter-bar").style.width = (done / DECISIONS.length * 100) + "%";
+  document.getElementById("st-pend").textContent = DECISIONS.length - done;
+  document.getElementById("st-p0").textContent = DECISIONS.filter(d => d.p === "P0" && !state.dec[d.id]?.escolha).length;
+}
+
+function renderDecisions() {
+  const root = document.getElementById("dec-root");
+  root.replaceChildren();
+  for (const p of ["P0", "P1", "P2"]) {
+    const items = DECISIONS.filter(d => d.p === p).filter(d => {
+      const done = !!state.dec[d.id]?.escolha;
+      return state.filter === "all" || (state.filter === "done" ? done : !done);
+    });
+    if (!items.length) continue;
+    root.append(el("h3", { class: "group-title" }, el("span", { class: "tag", text: p }), P_LABEL[p]));
+    const list = el("div", { class: "dec-list" });
+    for (const d of items) list.append(decCard(d));
+    root.append(list);
+  }
+  if (!root.children.length) {
+    root.append(el("p", { class: "notice", text: state.filter === "done" ? "Nenhuma decisão registrada ainda. Comece pelas P0." : "Tudo decidido. Me avise para seguir com o próximo passo." }));
+  }
+  renderMeter();
+}
+
+function decCard(d) {
+  const cur = state.dec[d.id] || {};
+  const done = !!cur.escolha;
+  const card = el("article", { class: "dec" + (done ? " done" : "") });
+  const top = el("div", { class: "dec-top" },
+    el("span", { class: "num", text: d.id.replace("d", "#") }),
+    el("span", { class: "pill " + (done ? "ok" : "pend"), text: done ? "Decidido" : "Pendente" }),
+    d.ext ? el("span", { class: "pill ext", text: "ação externa sua" }) : null);
+  const main = el("div", { class: "dec-main" }, top, el("h3", { text: d.title }), el("p", { text: d.why }), el("div", { class: "dec-links" }, ...d.links.map(([h, t], i) => el("a", { class: "go" + (i ? " ghost" : ""), href: h, text: t + (i ? "" : " →") }))));
+  const opts = el("div", { class: "opts", role: "radiogroup", "aria-label": d.title });
+  d.opts.forEach(o => {
+    const b = el("button", { class: "opt", type: "button", role: "radio", "aria-checked": String(cur.escolha === o), text: o });
+    if (!canWrite) b.disabled = true;
+    b.addEventListener("click", () => saveDecision(d.id, { escolha: cur.escolha === o ? "" : o }));
+    opts.append(b);
+  });
+  const ta = el("textarea", { id: "nota-" + d.id, placeholder: "Nota (opcional)", "aria-label": "Nota sobre " + d.title });
+  ta.value = cur.nota || "";
+  if (!canWrite) ta.disabled = true;
+  ta.addEventListener("change", () => saveDecision(d.id, { nota: ta.value.trim() }));
+  const saved = el("div", { class: "saved", text: cur.em ? "Salvo " + fmt(cur.em) : "" });
+  card.append(main, el("div", { class: "dec-side" }, opts, ta, saved));
+  return card;
+}
+
+async function saveDecision(id, patch) {
+  const next = { ...(state.dec[id] || {}), ...patch, em: new Date().toISOString() };
+  state.dec[id] = next;
+  renderDecisions();
+  if (!db) return;
+  try { await db.doc("decisoes/" + id).set(next); }
+  catch (e) { if (e?.code === "invalid_argument") { canWrite = false; renderDecisions(); } }
+}
+
+function renderProspects() {
+  const tb = document.getElementById("pro-root");
+  tb.replaceChildren();
+  PROSPECTS.forEach(([prio, nome, nicho, achado, oferta, contato], i) => {
+    const id = "p" + String(i + 1).padStart(2, "0");
+    const sel = el("select", { id: "st-" + id, "aria-label": "Status de " + nome });
+    PRO_STATUS.forEach(s => { const o = el("option", { value: s, text: s }); if ((state.pro[id]?.status || PRO_STATUS[0]) === s) o.selected = true; sel.append(o); });
+    if (!canWrite) sel.disabled = true;
+    sel.addEventListener("change", async () => {
+      state.pro[id] = { status: sel.value, em: new Date().toISOString() };
+      renderFunnel();
+      if (db) { try { await db.doc("prospects/" + id).set(state.pro[id]); } catch {} }
+    });
+    tb.append(el("tr", {},
+      el("td", { class: "n", text: String(i + 1).padStart(2, "0") }),
+      el("td", {}, el("b", { text: nome }), el("small", { text: nicho + " " }), el("span", { class: "prio " + prio, text: prio })),
+      el("td", { text: achado }), el("td", { text: oferta }), el("td", { class: "mono", text: contato }), el("td", {}, sel)));
+  });
+  renderFunnel();
+}
+
+function renderFunnel() {
+  const f = document.getElementById("funnel");
+  const count = s => PROSPECTS.filter((_, i) => (state.pro["p" + String(i + 1).padStart(2, "0")]?.status || PRO_STATUS[0]) === s).length;
+  f.replaceChildren(...PRO_STATUS.map(s => el("div", {}, el("b", { text: String(count(s)) }), el("span", { text: s }))));
+}
+
+document.querySelectorAll(".chip[data-f]").forEach(c => c.addEventListener("click", () => {
+  state.filter = c.dataset.f;
+  document.querySelectorAll(".chip[data-f]").forEach(x => x.setAttribute("aria-pressed", String(x === c)));
+  renderDecisions();
+}));
+
+document.querySelectorAll(".copy").forEach(btn => btn.addEventListener("click", async () => {
+  const code = btn.previousElementSibling;
+  try { await navigator.clipboard.writeText(code.textContent); btn.textContent = "copiado"; }
+  catch { const r = document.createRange(); r.selectNodeContents(code); const s = getSelection(); s.removeAllRanges(); s.addRange(r); btn.textContent = "selecionado"; }
+  setTimeout(() => (btn.textContent = "copiar"), 1600);
+}));
+
+renderDecisions();
+renderProspects();
+
+(async () => {
+  try { db = await window.claude?.use?.("db"); } catch { db = null; }
+  if (!db) { document.getElementById("db-notice").hidden = false; return; }
+  try {
+    const user = await window.claude.use("user");
+    const w = user ? await user.can("data.write") : null;
+    if (w === false) { canWrite = false; renderDecisions(); renderProspects(); }
+  } catch {}
+  db.collection("decisoes").onSnapshot(snap => {
+    snap.docs.forEach(d => { if (d.exists) state.dec[d.id] = d.data(); });
+    renderDecisions();
+  }, () => {});
+  db.collection("prospects").onSnapshot(snap => {
+    snap.docs.forEach(d => { if (d.exists) state.pro[d.id] = d.data(); });
+    renderProspects();
+  }, () => {});
+})();
+</script>

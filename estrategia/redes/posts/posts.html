@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dumentre — 9 primeiros posts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Schibsted+Grotesk:wght@400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+  :root { --paper:#f4f1ea; --raised:#fbfaf6; --ink:#15140f; --cobalt:#2236f5; --soft:#e4e7fe; --hl:#eaf05a; --graphite:#6b675e; --rule:#d9d4c7; --alert:#8a2412; --alert-soft:#f6d9d2; }
+  * { box-sizing:border-box; margin:0; padding:0; }
+  body { background:#cfcbc2; padding:40px; display:flex; flex-wrap:wrap; gap:40px; font-family:"Schibsted Grotesk",sans-serif; }
+  .post { position:relative; width:1080px; height:1350px; padding:72px; display:flex; flex-direction:column; overflow:hidden; background:var(--paper); color:var(--ink); flex:none; }
+  .post.ink { background:var(--ink); color:var(--paper); }
+  .post.cobalt { background:var(--cobalt); color:#fff; }
+  .grid { position:absolute; inset:0; background-image:linear-gradient(var(--rule) 1px,transparent 1px),linear-gradient(90deg,var(--rule) 1px,transparent 1px); background-size:40px 40px; opacity:.32; pointer-events:none; }
+  .ink .grid { background-image:linear-gradient(#2a2822 1px,transparent 1px),linear-gradient(90deg,#2a2822 1px,transparent 1px); opacity:1; }
+  .cobalt .grid { background-image:linear-gradient(rgba(255,255,255,.09) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.09) 1px,transparent 1px); opacity:1; }
+  .post > *:not(.grid) { position:relative; }
+  .mono { font-family:"IBM Plex Mono",monospace; }
+  .top { display:flex; justify-content:space-between; font:500 22px "IBM Plex Mono"; color:var(--graphite); padding-bottom:24px; border-bottom:2px solid currentColor; }
+  .top span:first-child { color:inherit; }
+  .ink .top { color:#bdb8ab; border-color:#4a473f; }
+  .cobalt .top { color:#dfe3ff; border-color:rgba(255,255,255,.45); }
+  .h { font-weight:800; letter-spacing:-.045em; line-height:.96; }
+  mark { color:var(--ink); background:linear-gradient(transparent 10%,var(--hl) 10%,var(--hl) 90%,transparent 90%); padding:0 .06em; -webkit-box-decoration-break:clone; box-decoration-break:clone; }
+  .foot { margin-top:auto; display:flex; justify-content:space-between; align-items:center; padding-top:36px; font:500 22px "IBM Plex Mono"; }
+  .lock { display:flex; align-items:center; gap:16px; font:800 44px/1 "Schibsted Grotesk"; letter-spacing:-.05em; }
+  .lock svg { width:44px; height:46px; }
+  .cta { color:var(--cobalt); }
+  .ink .cta { color:var(--hl); }
+  .cobalt .cta { color:#fff; border-bottom:2px solid #fff; }
+  .box { border:2px solid var(--ink); background:var(--raised); }
+  .ink .box { border-color:#4a473f; background:#1e1d17; }
+  .cobalt .box { border-color:var(--ink); background:var(--paper); color:var(--ink); box-shadow:10px 10px 0 var(--ink); }
+  .row { display:grid; grid-template-columns:200px 1fr; gap:24px; padding:20px 28px; border-bottom:2px solid var(--rule); align-items:baseline; font-size:28px; }
+  .row:last-child { border-bottom:0; }
+  .row .k { font:500 18px "IBM Plex Mono"; color:var(--graphite); text-transform:uppercase; letter-spacing:.04em; }
+  .row .v { font-weight:700; }
+  .pill { font:600 18px "IBM Plex Mono"; padding:6px 12px; text-transform:uppercase; }
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute"><defs>
+  <clipPath id="dmc"><path d="M121 116H300A211 209 0 0 1 300 534H121Z"/></clipPath>
+  <symbol id="dm" viewBox="0 0 630 655"><path fill="currentColor" fill-rule="evenodd" d="M20 18H300A310 309 0 0 1 300 636H20Z M107 102H300A225 223 0 0 1 300 548H107Z"/><g clip-path="url(#dmc)" fill="currentColor"><path d="M140 145L294 319L448 145V221L294 395L140 221Z"/><path d="M140 266L197 330V520H140Z"/><path d="M448 266L391 330V520H448Z"/></g></symbol>
+</defs></svg>
+
+<!-- P1 — manifesto (tinta) -->
+<section class="post ink" id="post-01">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 001 · Quem somos</span><span>dumentre.com</span></div>
+  <p class="mono" style="font-size:30px;margin-top:84px;color:#bdb8ab">dumentre <span style="color:var(--hl)">←</span> do latim <i>dum interim</i>:</p>
+  <p class="h" style="font-size:196px;margin-top:18px;color:var(--hl)">enquanto.</p>
+  <p class="h" style="font-size:78px;line-height:1.02;margin-top:70px">Enquanto você cuida do negócio, a gente cuida do digital.</p>
+  <p style="font-size:28px;line-height:1.45;margin-top:34px;color:#d7d2c6;max-width:820px">Sites, atendimento no WhatsApp e redes para pequenos negócios de São Paulo. Escopo, prazo e preço fechados.</p>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Prazer →</span></div>
+</section>
+
+<!-- P2 — dor do WhatsApp (papel) -->
+<section class="post" id="post-02">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 002 · Atendimento</span><span>dumentre.com</span></div>
+  <h2 class="h" style="font-size:100px;margin-top:64px">Enquanto você atende o cliente da frente, <mark>quem responde o do WhatsApp?</mark></h2>
+  <div class="box" style="margin-top:auto">
+    <div class="row" style="grid-template-columns:110px 1fr auto"><span class="mono" style="color:var(--graphite);font-size:24px">19:42</span><span>"Quanto custa a aula experimental?"</span><span class="pill" style="background:var(--alert-soft);color:var(--alert)">sem resposta</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr auto"><span class="mono" style="color:var(--graphite);font-size:24px">21:15</span><span>"Vocês abrem sábado?"</span><span class="pill" style="background:var(--alert-soft);color:var(--alert)">sem resposta</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr auto"><span class="mono" style="color:var(--graphite);font-size:24px">07:03</span><span>"Já fechei com outro, obrigado."</span><span class="pill" style="background:var(--alert-soft);color:var(--alert)">perdido</span></div>
+  </div>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Tem solução no post 7 →</span></div>
+</section>
+
+<!-- P3 — oferta site (cobalto) -->
+<section class="post cobalt" id="post-03">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 003 · Oferta 01</span><span>preço na etiqueta</span></div>
+  <h2 class="h" style="font-size:150px;margin-top:56px">Site no ar em 7 dias.</h2>
+  <div class="box" style="margin-top:auto">
+    <div class="row"><span class="k">Escopo</span><span class="v">Até 7 seções, texto escrito por nós</span></div>
+    <div class="row"><span class="k">Inclui</span><span class="v">Google, mapa e WhatsApp rastreado</span></div>
+    <div class="row"><span class="k">Código</span><span class="v">Fica no nome da sua empresa</span></div>
+    <div class="row"><span class="k">Prazo</span><span class="v">7 dias úteis</span></div>
+    <div class="row" style="background:var(--hl)"><span class="k" style="color:var(--ink)">Preço</span><span class="v" style="font-size:44px;letter-spacing:-.03em">R$ 2.900 <span class="mono" style="font-size:18px;font-weight:500">fechado</span></span></div>
+  </div>
+  <div class="foot" style="padding-top:44px"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Chama no WhatsApp</span></div>
+</section>
+
+<!-- P4 — case Julinho (papel) -->
+<section class="post" id="post-04">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 004 · Case 01</span><span>Vila Ema · SP</span></div>
+  <h2 class="h" style="font-size:84px;margin-top:56px">35 anos de história. <mark>Um caminho só</mark> até a aula experimental.</h2>
+  <div class="box" style="margin-top:auto;box-shadow:10px 10px 0 var(--ink)">
+    <div style="display:flex;justify-content:space-between;padding:14px 22px;border-bottom:2px solid var(--ink);font:500 18px 'IBM Plex Mono';text-transform:uppercase"><span>Julinho Fundamentos</span><span style="background:var(--hl);padding:0 6px">em andamento</span></div>
+    <div style="height:440px;overflow:hidden;border-bottom:2px solid var(--ink)"><img src="../../identidade/assets/julinho-desktop.png" style="width:100%;display:block" alt=""></div>
+    <div style="display:grid;grid-template-columns:repeat(3,1fr)">
+      <div style="padding:16px 22px;border-right:2px solid var(--ink)"><div class="mono" style="font-size:15px;color:var(--graphite)">ENTREGA</div><div style="font-weight:800;font-size:26px">Site + campanha</div></div>
+      <div style="padding:16px 22px;border-right:2px solid var(--ink)"><div class="mono" style="font-size:15px;color:var(--graphite)">DESDE</div><div style="font-weight:800;font-size:26px">1988</div></div>
+      <div style="padding:16px 22px"><div class="mono" style="font-size:15px;color:var(--graphite)">STACK</div><div style="font-weight:800;font-size:26px">Next.js</div></div>
+    </div>
+  </div>
+  <div class="foot" style="padding-top:44px"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Case completo no site →</span></div>
+</section>
+
+<!-- P5 — 7 dias (tinta) -->
+<section class="post ink" id="post-05">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 005 · Bastidor</span><span>dumentre.com</span></div>
+  <h2 class="h" style="font-size:92px;margin-top:56px">Como um site fica pronto em <span style="color:var(--hl)">7 dias</span> sem virar bagunça.</h2>
+  <div style="margin-top:auto;display:grid;gap:0;border-top:2px solid #4a473f">
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D1</span><span>Conversa de 30 min, gravada</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D2</span><span>Texto pronto para você aprovar</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D3–4</span><span>Visual e montagem</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D5</span><span>Você revisa no celular</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D6</span><span>Ajustes e testes</span></div>
+    <div class="row" style="grid-template-columns:110px 1fr;border-color:#2e2c26"><span class="mono" style="color:var(--hl);font-size:26px">D7</span><span style="font-weight:800">No ar. ✓</span></div>
+  </div>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Salva pra depois</span></div>
+</section>
+
+<!-- P6 — 5 sinais (papel) -->
+<section class="post" id="post-06">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 006 · Checklist</span><span>dumentre.com</span></div>
+  <h2 class="h" style="font-size:94px;margin-top:56px">5 sinais de que seu site está <mark>espantando cliente.</mark></h2>
+  <ol style="list-style:none;margin-top:auto;border-top:2px solid var(--ink)">
+    <li class="row" style="grid-template-columns:80px 1fr"><span class="mono" style="color:var(--cobalt);font-size:24px">01</span><span>Demora mais de 3 segundos para abrir no celular.</span></li>
+    <li class="row" style="grid-template-columns:80px 1fr"><span class="mono" style="color:var(--cobalt);font-size:24px">02</span><span>Não tem botão de WhatsApp na primeira tela.</span></li>
+    <li class="row" style="grid-template-columns:80px 1fr"><span class="mono" style="color:var(--cobalt);font-size:24px">03</span><span>Preço, horário ou endereço escondidos.</span></li>
+    <li class="row" style="grid-template-columns:80px 1fr"><span class="mono" style="color:var(--cobalt);font-size:24px">04</span><span>Foto de banco de imagem no lugar da sua equipe.</span></li>
+    <li class="row" style="grid-template-columns:80px 1fr"><span class="mono" style="color:var(--cobalt);font-size:24px">05</span><span>O rodapé ainda diz "© 2019".</span></li>
+  </ol>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Quantos você marcou?</span></div>
+</section>
+
+<!-- P7 — atendente IA (cobalto) -->
+<section class="post cobalt" id="post-07">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 007 · Oferta 02</span><span>Atendente com IA</span></div>
+  <h2 class="h" style="font-size:112px;margin-top:56px">21h14. Respondido em 4 segundos.</h2>
+  <div style="margin-top:auto;display:flex;flex-direction:column;gap:16px">
+    <div class="box" style="align-self:flex-start;max-width:640px;padding:20px 26px;font-size:28px;box-shadow:6px 6px 0 var(--ink)"><span class="mono" style="font-size:16px;color:var(--graphite)">CLIENTE · 21:14</span><br>Vocês atendem sábado?</div>
+    <div class="box" style="align-self:flex-end;max-width:760px;padding:20px 26px;font-size:28px;background:var(--hl);box-shadow:6px 6px 0 var(--ink)"><span class="mono" style="font-size:16px">ASSISTENTE · 21:14</span><br>Sim! Sábado das 8h às 12h. Quer que eu reserve um horário? Me diz seu nome e o melhor dia.</div>
+    <div class="box" style="align-self:stretch;padding:18px 26px;font-size:24px;background:var(--ink);color:var(--paper);border-color:var(--ink);box-shadow:none"><span class="mono" style="font-size:16px;color:var(--hl)">RESUMO PARA O DONO</span><br>Ana · avaliação · sábado 9h · veio do Instagram</div>
+  </div>
+  <div class="foot" style="padding-top:40px"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">R$ 3.500 + R$ 390/mês</span></div>
+</section>
+
+<!-- P8 — Google Maps (papel) -->
+<section class="post" id="post-08">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 008 · Teste de 1 minuto</span><span>dumentre.com</span></div>
+  <h2 class="h" style="font-size:96px;margin-top:56px">Procure seu negócio no Google Maps <mark>agora.</mark></h2>
+  <p style="font-size:30px;margin-top:28px;color:#3a3830">Antes de pagar anúncio, confira:</p>
+  <div class="box" style="margin-top:auto">
+    <div class="row" style="grid-template-columns:60px 1fr"><span style="width:34px;height:34px;border:2px solid var(--ink);display:inline-block"></span><span>A categoria é a certa?</span></div>
+    <div class="row" style="grid-template-columns:60px 1fr"><span style="width:34px;height:34px;border:2px solid var(--ink);display:inline-block"></span><span>O horário de hoje está certo?</span></div>
+    <div class="row" style="grid-template-columns:60px 1fr"><span style="width:34px;height:34px;border:2px solid var(--ink);display:inline-block"></span><span>Tem foto real da fachada e de dentro?</span></div>
+    <div class="row" style="grid-template-columns:60px 1fr"><span style="width:34px;height:34px;border:2px solid var(--ink);display:inline-block"></span><span>As avaliações têm resposta sua?</span></div>
+  </div>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Faltou algum? Raio-X →</span></div>
+</section>
+
+<!-- P9 — o código é seu (tinta) -->
+<section class="post ink" id="post-09">
+  <div class="grid"></div>
+  <div class="top"><span>Ficha nº 009 · Compromisso</span><span>dumentre.com</span></div>
+  <h2 class="h" style="font-size:176px;margin-top:80px">O código <span style="color:var(--hl)">é seu.</span></h2>
+  <p style="font-size:38px;line-height:1.3;margin-top:56px;max-width:880px;font-weight:600;letter-spacing:-.015em">Se um dia quiser trocar de fornecedor, leva tudo: domínio, código e acessos.</p>
+  <p class="mono" style="font-size:26px;margin-top:28px;color:#bdb8ab">Sem multa. Sem plataforma presa. Sem refém.</p>
+  <div class="foot"><span class="lock"><svg><use href="#dm"/></svg>dumentre</span><span class="cta">Escopo · prazo · preço fechados</span></div>
+</section>
+
+<!-- Prévia da grade do perfil (mais recente no topo à esquerda) -->
+<section id="grade" style="width:1080px;background:#fff;padding:40px;flex:none">
+  <div style="display:flex;align-items:center;gap:28px;padding-bottom:32px;border-bottom:1px solid #ddd;font-family:system-ui,sans-serif">
+    <div style="width:150px;height:150px;border-radius:50%;background:#15140f;color:#f4f1ea;display:grid;place-items:center"><svg width="70" height="73"><use href="#dm"/></svg></div>
+    <div><div style="font-weight:700;font-size:26px">dumentre</div><div style="font-size:20px;color:#555;margin-top:6px">Sites, WhatsApp com IA e redes para pequenos negócios de SP.<br>Escopo, prazo e preço fechados.<br><b style="color:#2236f5">dumentre.com</b></div></div>
+  </div>
+  <div id="grid9" style="display:grid;grid-template-columns:repeat(3,1fr);gap:4px;margin-top:4px"></div>
+</section>
+<script>
+  // monta a grade com cópias reduzidas dos posts, na ordem do feed (9 → 1)
+  const g = document.getElementById('grid9');
+  for (let i = 9; i >= 1; i--) {
+    const src = document.getElementById('post-0' + i);
+    const wrap = document.createElement('div');
+    wrap.style.cssText = 'width:330px;height:412.5px;overflow:hidden;position:relative';
+    const c = src.cloneNode(true); c.removeAttribute('id');
+    c.style.cssText = 'transform:scale(.30556);transform-origin:0 0;position:absolute;top:0;left:0';
+    wrap.appendChild(c); g.appendChild(wrap);
+  }
+</script>
+</body>
+</html>

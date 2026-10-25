@@ -1,0 +1,7 @@
+{
+  "name": "dumentre-painel",
+  "private": true,
+  "description": "Gera o painel visual (artifact) a partir dos .md da knowledge base.",
+  "scripts": { "build": "node build.js" },
+  "dependencies": { "marked": "12.0.2", "playwright": "1.61.1" }
+}
