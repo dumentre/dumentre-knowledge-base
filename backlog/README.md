@@ -84,3 +84,8 @@ Pendências novas achadas nas sessões de Claude Code da pasta dumentre (22/10 a
 - [2026-10-08] Redesign feito em worktree separada para não misturar com o trabalho não commitado em `main`.
 - [2026-10-08] O case Julinho entra como "em andamento", com fotos de alunos desfocadas e sem resultados inventados.
 - [2026-10-08] Sites-proposta para prospects não usam logo, escudo nem fotos dos negócios; ficam locais e marcados como proposta.
+
+## Decisões de 12/11/2026
+
+- **12/11/2026 (decisão do Luan):** sem preço público; orçamento sob medida por IA (plano + horas + custo de infra do cliente ou do Luan) quando o cliente chamar no WhatsApp/Instagram/outro canal (DUM-01 v2). Prospecção automática aprovada: bots acham empresas, dão nota ao site e preparam a abordagem; envio é do Luan (DUM-13). Lote 1 aprovado, o Luan envia (DUM-04). Fonte: `C:\Users\luanc\projects\projects-knowledge-base\organizacao\decisoes-2026-11-12.md`.
+- **12/11/2026 (DUM-01 v2 entregue):** especificação completa do fluxo de orçamento sob medida por IA (roteiro de descoberta, estimativa PERT, valor-hora de referência de R$ 150/h a confirmar pelo Luan em DUM-14, cenários de infra Cliente × Hetzner/Cloudflare, 3 exemplos fictícios e inventário de remoção de preços do site) em [`estrategia/orcamento-sob-medida.md`](../estrategia/orcamento-sob-medida.md) (`C:\Users\luanc\projects\dumentre\dumentre-knowledge-base\estrategia\orcamento-sob-medida.md`) e motor determinístico com testes em `C:\Users\luanc\projects\dumentre\orcamento\gerar_orcamento.py`.
