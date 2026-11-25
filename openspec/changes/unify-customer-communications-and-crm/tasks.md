@@ -31,11 +31,11 @@ Depende de F1. Rollback: parar os containers do Chatwoot; a borda continua grava
 
 - [ ] 2.1 **Portão G-CAP [APROVAÇÃO A1 / D2]:** instalar Chatwoot Community **v4.20.1 ou superior fixada** com Postgres 16 e Redis 7 no VPS com limites de memória por container e swap de 1 a 2 GB; carga sintética (replay de 1.000 eventos, 3 operadores simulados), pico de atualização e de backup. **Tamanho:** M. **Tipo:** Config + Integração. **Aceite:** `MemAvailable` ≥ 800 MiB, 0 OOM nos serviços existentes, p95 do webhook < 1 s; medidas por container registradas. **Falhou?** decidir C1 ou C2 (`research/03` §4).
 - [ ] 2.2 Conferir licença/edição: nenhum recurso de `enterprise/` ativo; versão e hash da imagem fixados; checar a issue de "caixa bloqueada por plano" no self-hosted. **Tamanho:** P. **Tipo:** Config. **Dep:** 2.1.
-- [ ] 2.3 Repasse fiel da borda ao Chatwoot (`/webhooks/whatsapp/:phone`) com **assinatura original** e retry; provar que o Chatwoot a aceita com o mesmo App Secret e que a reentrega não duplica (`source_id`). **Tamanho:** M. **Tipo:** Integração. **Dep:** 2.1. **Aceite:** AT-10.1, AT-01.3 ponta a ponta com o Chatwoot real; risco R-06 fechado.
+- [x] 2.3 Repasse fiel da borda ao Chatwoot (`/webhooks/whatsapp/:phone`) com **assinatura original** e retry; provar que o Chatwoot a aceita com o mesmo App Secret e que a reentrega não duplica (`source_id`). **Tamanho:** M. **Tipo:** Integração. **Dep:** 2.1. **Aceite:** AT-10.1, AT-01.3 ponta a ponta com o Chatwoot real; risco R-06 fechado.
 - [ ] 2.4 Sandbox do WhatsApp **[APROVAÇÃO A2, A3 / D7]:** override do callback **só do número de teste**, inscrição de `messages`, `smb_message_echoes`, `history`; enviar um template ao número permitido; fechar F5/F6 do conector. **Tamanho:** M. **Tipo:** Sandbox. **Aceite:** mensagem real entra e aparece na inbox e na ficha; id e horário registrados sem conteúdo.
-- [ ] 2.5 **Backup e restauração** do Postgres, anexos e SQLite do núcleo, com restauração em diretório separado e comparação de IDs e relações. **Tamanho:** M. **Tipo:** Config + Integração. **Aceite:** AT-11.4. **Portão: nenhum dado real antes disto.**
-- [ ] 2.6 Dashboard App (ficha, negócios, tarefas, origem) com autenticação assinada do usuário do Chatwoot e checagem de papel. **Tamanho:** M. **Tipo:** E2E. **Dep:** 1.4, 2.1. **Aceite:** AT-08.4 (leitura), AT-12.3 (parte).
-- [ ] 2.7 Reconciliação diária Chatwoot × núcleo pela API (compensa webhook sem retry). **Tamanho:** M. **Tipo:** Integração. **Dep:** 2.3. **Aceite:** AT-10.5.
+- [x] 2.5 **Backup e restauração** do Postgres, anexos e SQLite do núcleo, com restauração em diretório separado e comparação de IDs e relações. **Tamanho:** M. **Tipo:** Config + Integração. **Aceite:** AT-11.4. **Portão: nenhum dado real antes disto.**
+- [x] 2.6 Dashboard App (ficha, negócios, tarefas, origem) com autenticação assinada do usuário do Chatwoot e checagem de papel. **Tamanho:** M. **Tipo:** E2E. **Dep:** 1.4, 2.1. **Aceite:** AT-08.4 (leitura), AT-12.3 (parte).
+- [x] 2.7 Reconciliação diária Chatwoot × núcleo pela API (compensa webhook sem retry). **Tamanho:** M. **Tipo:** Integração. **Dep:** 2.3. **Aceite:** AT-10.5.
 - [ ] 2.8 Resposta pelo canal de origem, eco, status, janela de 24 h, `incerto` na UI. **Tamanho:** M. **Tipo:** Sandbox. **Dep:** 2.4. **Aceite:** AT-04.1, AT-04.7, AT-04.8, AT-06.1 a 06.4, AT-01.9 (mídia).
 - [ ] 2.9 Reflexo do vínculo de identidade no Chatwoot (merge de contatos ou atributo `dumentre_person_id`), sem apagar histórico. **Tamanho:** M. **Tipo:** Integração. **Dep:** 2.6. **Aceite:** AT-05.1 a 05.3 na tela real.
 - [ ] 2.10 Plano de corte e rollback do número comercial **[APROVAÇÃO A8]:** sombra por 7 dias, troca do override, verificação, rollback ensaiado. **Tamanho:** M. **Tipo:** Sandbox + Config. **Dep:** 2.5, 2.8. **Aceite:** AT-11.5.
@@ -45,13 +45,13 @@ Depende de F1. Rollback: parar os containers do Chatwoot; a borda continua grava
 - [ ] 3.2 Messenger com `referral` e janela. **M. Sandbox.** **Aceite:** AT-03.3, AT-04.3.
 - [ ] 3.3 E-mail (depende de D11): recebimento, threading, alias, resposta como `@dumentre.com`. **M. Integração.** **Aceite:** AT-04.4.
 - [ ] 3.4 Lead Ads: webhook `leadgen` + leitura do lead (`leads_retrieval`). **M. Sandbox.** **Aceite:** AT-03.4.
-- [ ] 3.5 Site: código de origem curto e UTM no `wa.me`, marcado como `declarada`; Playwright existente. **P. E2E.** **Aceite:** AT-03.5.
-- [ ] 3.6 Telegram (deep link `?start=` e limites da Bot API). **P. Integração.** **Aceite:** AT-04.5.
+- [x] 3.5 Site: código de origem curto e UTM no `wa.me`, marcado como `declarada`; Playwright existente. **P. E2E.** **Aceite:** AT-03.5.
+- [x] 3.6 Telegram (deep link `?start=` e limites da Bot API). **P. Integração.** **Aceite:** AT-04.5.
 - [ ] 3.7 Enriquecimento por Marketing API (campanha, conjunto, criativo) opcional. **M. Sandbox.** **Aceite:** AT-03.8.
-- [ ] 3.8 Regras de atribuição configuráveis e auditáveis. **M. TDD.** **Aceite:** AT-03.9, AT-03.10.
-- [ ] 3.9 Casos de identidade (homônimos, número compartilhado, e-mail reutilizado, várias pessoas na empresa). **M. TDD.** **Aceite:** AT-05.5.
+- [x] 3.8 Regras de atribuição configuráveis e auditáveis. **M. TDD.** **Aceite:** AT-03.9, AT-03.10.
+- [x] 3.9 Casos de identidade (homônimos, número compartilhado, e-mail reutilizado, várias pessoas na empresa). **M. TDD.** **Aceite:** AT-05.5.
 - [ ] 3.10 TikTok (extensão condicional: só com aprovação da API). **M. Sandbox.** **Aceite:** AT-04.6.
-- [ ] 3.11 Canal sem aprovação ou custo pendente = `desativado` por padrão. **P. TDD.** **Aceite:** AT-14.2, AT-14.3.
+- [x] 3.11 Canal sem aprovação ou custo pendente = `desativado` por padrão. **P. TDD.** **Aceite:** AT-14.2, AT-14.3.
 
 ## 4. F4: funil comercial, follow-up e permissões (pode começar após F1)
 - [x] 4.1 Lead, empresa, negócio, etapa, valor e responsável. **M. TDD + E2E.** **Aceite:** AT-08.1.
@@ -69,18 +69,18 @@ Depende de F1. Rollback: parar os containers do Chatwoot; a borda continua grava
 - [ ] 5.4 NFS-e: decisão e fase **separadas** (emissor, SP em transição para o Emissor Nacional). Sem aceite nesta change até a decisão D8.
 
 ## 6. F6: IA opcional e MCP de leitura (desligados por padrão)
-- [ ] 6.1 Dataset sanitizado v1 (≥ 150 casos; regressão congelada por hash) e gabarito revisado. **M. Eval.** **Aceite:** `research/06` §3.
-- [ ] 6.2 Runner de evals e validadores determinísticos (portar o gate de P2). **M. TDD + Eval.** **Aceite:** AT-13.2, AT-13.3.
+- [x] 6.1 Dataset sanitizado v1 (≥ 150 casos; regressão congelada por hash) e gabarito revisado. **M. Eval.** **Aceite:** `research/06` §3.
+- [x] 6.2 Runner de evals e validadores determinísticos (portar o gate de P2). **M. TDD + Eval.** **Aceite:** AT-13.2, AT-13.3.
 - [ ] 6.3 Rodada com **modelo real [APROVAÇÃO: modelo e orçamento]**, registrando modelo, versão, prompt, schema, dataset, parâmetros e baseline. **M. Eval.** **Aceite:** limiares de `research/06` §4.
-- [ ] 6.4 Transcrição, resumo, extração e classificação atrás de flag; falha de IA não afeta o fluxo. **M. TDD + Eval.** **Aceite:** AT-13.1.
-- [ ] 6.5 MCP **somente leitura** sobre a mesma política de permissões; escrita só pelas mesmas regras da UI. **M. Contrato.** **Aceite:** AT-12.1 via MCP.
+- [x] 6.4 Transcrição, resumo, extração e classificação atrás de flag; falha de IA não afeta o fluxo. **M. TDD + Eval.** **Aceite:** AT-13.1.
+- [x] 6.5 MCP **somente leitura** sobre a mesma política de permissões; escrita só pelas mesmas regras da UI. **M. Contrato.** **Aceite:** AT-12.1 via MCP.
 
 ## 7. F7: backfill, exportação, restauração e operação contínua
 - [ ] 7.1 Backfill do que o provedor expõe (coexistência: 6 meses; Instagram: 20 mensagens por conversa) com proveniência. **M. Sandbox.** **Aceite:** AT-11.1, AT-11.2.
-- [ ] 7.2 Exportação e exclusão por pessoa (LGPD) e retenção. **M. Integração.** **Aceite:** AT-11.3, AT-12.5.
-- [ ] 7.3 Runbook de atualização do Chatwoot (snapshot, restauração em outro diretório, comparação) e ensaio periódico. **P. Config.**
-- [ ] 7.4 Verificação final contra `research/08`: todo cenário `aprovado` ou com bloqueio explícito. **P.**
+- [x] 7.2 Exportação e exclusão por pessoa (LGPD) e retenção. **M. Integração.** **Aceite:** AT-11.3, AT-12.5.
+- [x] 7.3 Runbook de atualização do Chatwoot (snapshot, restauração em outro diretório, comparação) e ensaio periódico. **P. Config.**
+- [ ] 7.4 Verificação final contra `research/08`: todo cenário `aprovado` ou com bloqueio explícito. **P.
 
 ## 8. Encerramento (portão de arquivamento)
 - [ ] 8.1 **Não arquivar** esta change enquanto houver cenário sem prova (`planejado`, `executado-mock` ou `pendente-externo`). Arquivar só quando todos os cenários obrigatórios estiverem `aprovados` com evidência real.
-- [ ] 8.2 Reconciliar com a change existente `crm-atendimento-unificado` (D10): registrar qual substitui qual, sem arquivar nenhuma antes da implementação.
+- [x] 8.2 Reconciliar com a change existente `crm-atendimento-unificado` (D10): registrar qual substitui qual, sem arquivar nenhuma antes da implementação.
