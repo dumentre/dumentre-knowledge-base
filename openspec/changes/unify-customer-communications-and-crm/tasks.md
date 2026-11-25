@@ -54,16 +54,16 @@ Depende de F1. Rollback: parar os containers do Chatwoot; a borda continua grava
 - [ ] 3.11 Canal sem aprovação ou custo pendente = `desativado` por padrão. **P. TDD.** **Aceite:** AT-14.2, AT-14.3.
 
 ## 4. F4: funil comercial, follow-up e permissões (pode começar após F1)
-- [ ] 4.1 Lead, empresa, negócio, etapa, valor e responsável. **M. TDD + E2E.** **Aceite:** AT-08.1.
-- [ ] 4.2 Proposta (versão, valor, validade) e próxima ação. **M. TDD + E2E.** **Aceite:** AT-08.2.
-- [ ] 4.3 Concorrência otimista e auditoria. **M. TDD + Integração.** **Aceite:** AT-08.3.
-- [ ] 4.4 Papéis e isolamento por conta comercial. **M. TDD + Integração.** **Aceite:** AT-12.3.
-- [ ] 4.5 Política de follow-up (cancelar, reagendar, revisar), opt-out, pausa, alteração de prazo. **M. TDD.** **Aceite:** AT-07.3 a 07.5.
-- [ ] 4.6 Agendador com relógio injetável e trava de execução. **P. TDD.** **Aceite:** AT-07.1, 07.2, 07.6.
-- [ ] 4.7 Política única de envio e flags de categorias cobráveis (template, Business Agent, broadcast) desativadas. **P. TDD.** **Aceite:** AT-12.1, AT-12.4.
+- [x] 4.1 Lead, empresa, negócio, etapa, valor e responsável. **M. TDD + E2E.** **Aceite:** AT-08.1.
+- [x] 4.2 Proposta (versão, valor, validade) e próxima ação. **M. TDD + E2E.** **Aceite:** AT-08.2.
+- [x] 4.3 Concorrência otimista e auditoria. **M. TDD + Integração.** **Aceite:** AT-08.3.
+- [x] 4.4 Papéis e isolamento por conta comercial. **M. TDD + Integração.** **Aceite:** AT-12.3.
+- [x] 4.5 Política de follow-up (cancelar, reagendar, revisar), opt-out, pausa, alteração de prazo. **M. TDD.** **Aceite:** AT-07.3 a 07.5.
+- [x] 4.6 Agendador com relógio injetável e trava de execução. **P. TDD.** **Aceite:** AT-07.1, 07.2, 07.6.
+- [x] 4.7 Política única de envio e flags de categorias cobráveis (template, Business Agent, broadcast) desativadas. **P. TDD.** **Aceite:** AT-12.1, AT-12.4.
 
 ## 5. F5: billing
-- [ ] 5.1 Livro interno em centavos inteiros com moeda; saldo derivado; testes de propriedade (soma, parcial, estorno). **M. TDD.** **Aceite:** AT-09.1, 09.2.
+- [x] 5.1 Livro interno em centavos inteiros com moeda; saldo derivado; testes de propriedade (soma, parcial, estorno). **M. TDD.** **Aceite:** AT-09.1, 09.2.
 - [ ] 5.2 Gateway escolhido (D8): webhook idempotente por `(gateway, id externo)`, eventos fora de ordem, conciliação diária. **G. Contrato + Integração + Sandbox.** **Aceite:** AT-09.3.
 - [ ] 5.3 Painel de cobranças na ficha e limite explícito de NFS-e. **M. E2E.** **Aceite:** AT-09.4.
 - [ ] 5.4 NFS-e: decisão e fase **separadas** (emissor, SP em transição para o Emissor Nacional). Sem aceite nesta change até a decisão D8.
