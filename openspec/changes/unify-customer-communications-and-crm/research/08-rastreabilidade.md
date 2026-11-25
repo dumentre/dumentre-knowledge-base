@@ -1,0 +1,106 @@
+# 08. Matriz única de rastreabilidade
+
+**Gerada por `research/evidence/tools/gerar_matriz.py` a partir do catálogo (02), das specs e das tarefas.** Não editar à mão: mude a fonte e regenere.
+
+Colunas: **requisito** (capacidade › requisito da spec) | **cenário** (ID `AT-xx.y`, texto normativo na spec) | **componente/versão** | **evidência** | **teste** | **resultado** | **bloqueio** | tarefa.
+
+Vocabulário de resultado: `planejado` (escrito, sem execução) · `executado-mock` (rodou contra fixture/mock local nosso; **não é aprovação**) · `aprovado` (provado contra serviço real/sandbox) · `reprovado` · `pendente-externo` (depende de conta, autorização ou decisão). **`aprovado` = 0 nesta fase, por construção** (nenhuma prova usou Chatwoot, Meta ou serviço real).
+
+## Resumo
+
+| Resultado | Microcenários |
+|---|---|
+| aprovado | 0 |
+| reprovado | 0 |
+| executado-mock | 36 |
+| executado-mock (parcial) | 5 |
+| pendente-externo | 14 |
+| planejado | 23 |
+| **Total** | **78** |
+
+Microcenários do catálogo sem cenário na spec: **0** 
+
+Reprovações do **componente existente** (webhook instalado, commit `03584b1`) medidas em P0: AT-01.4, AT-01.7, AT-01.8, AT-01.9, AT-04.8 (e `referral`/`statuses`, que sustentam AT-03.1 e AT-06). Isso reprova o **componente atual**, não os cenários: eles seguem como requisito da implementação nova.
+
+## Matriz
+
+| Cenário | Requisito (capacidade › requisito) | Componente/versão | Evidência | Teste | Resultado | Bloqueio | Tarefa |
+|---|---|---|---|---|---|---|---|
+| AT-01.1 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t1 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-01.2 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t1 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-01.3 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t2 | executado-mock | implementação (tarefa abaixo) | 1.3, 2.3 |
+| AT-01.4 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt; evidence/saidas/p0-caracterizacao-webhook-atual.txt (P0 C5: **webhook atual reprova**) | core.test.mjs › t4 | executado-mock | implementação (tarefa abaixo) | 1.1 |
+| AT-01.5 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t3 | executado-mock | implementação (tarefa abaixo) | 1.1 |
+| AT-01.6 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t1 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-01.7 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt; evidence/saidas/p0-caracterizacao-webhook-atual.txt (P0 C8: **webhook atual reprova**) | core.test.mjs › t3 | executado-mock | implementação (tarefa abaixo) | 1.1 |
+| AT-01.8 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p0-caracterizacao-webhook-atual.txt (P0 C9: **webhook atual reprova**) | a escrever (tarefa 1.1, tarefa 1.5) | planejado | D4 (retenção/LGPD) | 1.1, 1.5 |
+| AT-01.9 | ingestao-eventos › Recepção durável e validada de eventos | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p0-caracterizacao-webhook-atual.txt (P0 C6: **webhook atual reprova**) | a escrever (tarefa 2.8) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.8 |
+| AT-02.1 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t8 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-02.2 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t8 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-02.3 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t8 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-02.4 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t8 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-02.5 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t9 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-02.6 | comercial-followup › Pessoa com vários negócios sem lead duplicado | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t8,t9 + mutante | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-03.1 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t6 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-03.2 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t6 (fixture) | executado-mock | conta/canal real de teste (A2–A4; D7) | 3.1 |
+| AT-03.3 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | — | a escrever (tarefa 3.2) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 3.2 |
+| AT-03.4 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | — | a escrever (tarefa 3.4) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 3.4 |
+| AT-03.5 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | — | a escrever (tarefa 3.5) | planejado | implementação (tarefa abaixo) | 3.5 |
+| AT-03.6 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t6 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-03.7 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t6 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-03.8 | atribuicao-origem › Atribuição rastreável por superfície | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | — | a escrever (tarefa 3.7) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 3.7 |
+| AT-03.9 | atribuicao-origem › Toques e regras auditáveis | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t6 | executado-mock | implementação (tarefa abaixo) | 3.8 |
+| AT-03.10 | atribuicao-origem › Toques e regras auditáveis | Borda/núcleo (attribution); Meta webhooks (referral/leadgen) | — | a escrever (tarefa 3.8) | planejado | implementação (tarefa abaixo) | 3.8 |
+| AT-04.1 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 2.8) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.8 |
+| AT-04.2 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.1) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 3.1 |
+| AT-04.3 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.2) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 3.2 |
+| AT-04.4 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.3) | planejado | Chatwoot instalado (G-CAP, A1); D11 (SMTP) | 3.3 |
+| AT-04.5 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.6) | planejado | Chatwoot instalado (G-CAP, A1) | 3.6 |
+| AT-04.6 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.10) | pendente-externo | conta/canal real de teste (A2–A4; D7); aprovação TikTok | 3.10 |
+| AT-04.7 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 2.8) | planejado | Chatwoot instalado (G-CAP, A1) | 2.8 |
+| AT-04.8 | canais-adaptadores › Recepção e resposta por canal com capacidades explícitas | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | evidence/saidas/p0-caracterizacao-webhook-atual.txt (P0 C7: **webhook atual reprova**) | a escrever (tarefa 2.8) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.8 |
+| AT-05.1 | identidade-ficha-unificada › Identidade verificável entre canais | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t5 | executado-mock | implementação (tarefa abaixo) | 1.7, 2.9 |
+| AT-05.2 | identidade-ficha-unificada › Ficha unificada pesquisável | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t5 (dados, sem UI) | executado-mock (parcial) | Chatwoot instalado (G-CAP, A1) | 1.4, 2.9 |
+| AT-05.3 | identidade-ficha-unificada › Identidade verificável entre canais | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t5 | executado-mock | implementação (tarefa abaixo) | 1.7, 2.9 |
+| AT-05.4 | identidade-ficha-unificada › Identidade verificável entre canais | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 (sem asserção dedicada) | executado-mock (parcial) | implementação (tarefa abaixo) | 1.7 |
+| AT-05.5 | identidade-ficha-unificada › Identidade verificável entre canais | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | — | a escrever (tarefa 3.9) | planejado | implementação (tarefa abaixo) | 3.9 |
+| AT-05.6 | identidade-ficha-unificada › Ficha unificada pesquisável | Núcleo (identity/identity_link) + ficha; Chatwoot v4.20.1 (contato) | — | a escrever (tarefa 1.4) | planejado | Chatwoot instalado (G-CAP, A1) | 1.4 |
+| AT-06.1 | canais-adaptadores › Envio, eco e status consistentes | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 2.8) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.8 |
+| AT-06.2 | canais-adaptadores › Envio, eco e status consistentes | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t10 | executado-mock | implementação (tarefa abaixo) | 2.8 |
+| AT-06.3 | canais-adaptadores › Envio, eco e status consistentes | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t10 | executado-mock | implementação (tarefa abaixo) | 2.8 |
+| AT-06.4 | canais-adaptadores › Envio, eco e status consistentes | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 2.8) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.8 |
+| AT-07.1 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 | executado-mock | implementação (tarefa abaixo) | 4.6 |
+| AT-07.2 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 | executado-mock | implementação (tarefa abaixo) | 4.6 |
+| AT-07.3 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 (ramo cancelar) | executado-mock | implementação (tarefa abaixo) | 4.5 |
+| AT-07.4 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | — | a escrever (tarefa 4.5) | executado-mock (parcial) | implementação (tarefa abaixo) | 4.5 |
+| AT-07.5 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 | executado-mock | implementação (tarefa abaixo) | 4.5 |
+| AT-07.6 | comercial-followup › Follow-up com relógio injetável e política | Núcleo (opportunity/task/policy) + Dashboard App | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t14 | executado-mock | implementação (tarefa abaixo) | 4.6 |
+| AT-08.1 | comercial-followup › Funil comercial na tela principal | Núcleo (opportunity/task/policy) + Dashboard App | — | a escrever (tarefa 4.1) | planejado | implementação (tarefa abaixo) | 4.1 |
+| AT-08.2 | comercial-followup › Funil comercial na tela principal | Núcleo (opportunity/task/policy) + Dashboard App | — | a escrever (tarefa 4.2) | planejado | implementação (tarefa abaixo) | 4.2 |
+| AT-08.3 | comercial-followup › Funil comercial na tela principal | Núcleo (opportunity/task/policy) + Dashboard App | — | a escrever (tarefa 4.3) | planejado | implementação (tarefa abaixo) | 4.3 |
+| AT-08.4 | comercial-followup › Funil comercial na tela principal | Núcleo (opportunity/task/policy) + Dashboard App | — | a escrever (tarefa 2.6) | planejado | Chatwoot instalado (G-CAP, A1) | 2.6 |
+| AT-09.1 | billing › Registro financeiro ligado ao negócio | Núcleo (livro interno) + gateway a definir (D8) | — | a escrever (tarefa 5.1) | planejado | D8 (gateway/NFS-e) | 5.1 |
+| AT-09.2 | billing › Registro financeiro ligado ao negócio | Núcleo (livro interno) + gateway a definir (D8) | — | a escrever (tarefa 5.1) | planejado | D8 (gateway/NFS-e) | 5.1 |
+| AT-09.3 | billing › Eventos de gateway idempotentes e conciliados | Núcleo (livro interno) + gateway a definir (D8) | — | a escrever (tarefa 5.2) | planejado | D8 (gateway/NFS-e) | 5.2 |
+| AT-09.4 | billing › Fronteira entre registro interno, gateway e NFS-e | Núcleo (livro interno) + gateway a definir (D8) | — | a escrever (tarefa 5.3) | planejado | D8 (gateway/NFS-e) | 5.3 |
+| AT-10.1 | ingestao-eventos › Processamento idempotente e recuperação de falhas | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t7 | executado-mock | implementação (tarefa abaixo) | 1.3, 2.3 |
+| AT-10.2 | ingestao-eventos › Processamento idempotente e recuperação de falhas | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t2 | executado-mock | implementação (tarefa abaixo) | 1.3 |
+| AT-10.3 | ingestao-eventos › Processamento idempotente e recuperação de falhas | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | — | a escrever (tarefa 1.6) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 1.6 |
+| AT-10.4 | ingestao-eventos › Processamento idempotente e recuperação de falhas | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | — | a escrever (tarefa 1.5) | executado-mock (parcial) | implementação (tarefa abaixo) | 1.5 |
+| AT-10.5 | ingestao-eventos › Processamento idempotente e recuperação de falhas | Borda (webhook-service evoluído) + núcleo Node 22/SQLite; Meta Graph API v26+ | — | a escrever (tarefa 2.7) | planejado | Chatwoot instalado (G-CAP, A1) | 2.7 |
+| AT-11.1 | operacao-seguranca-custos › Backfill, exportação, restauração e corte seguros | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 7.1) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 7.1 |
+| AT-11.2 | operacao-seguranca-custos › Backfill, exportação, restauração e corte seguros | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 7.1) | planejado | implementação (tarefa abaixo) | 7.1 |
+| AT-11.3 | operacao-seguranca-custos › Backfill, exportação, restauração e corte seguros | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 7.2) | planejado | implementação (tarefa abaixo) | 7.2 |
+| AT-11.4 | operacao-seguranca-custos › Backfill, exportação, restauração e corte seguros | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 2.5) | planejado | Chatwoot instalado (G-CAP, A1) | 2.5 |
+| AT-11.5 | operacao-seguranca-custos › Backfill, exportação, restauração e corte seguros | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 2.10) | pendente-externo | conta/canal real de teste (A2–A4; D7) | 2.10 |
+| AT-12.1 | operacao-seguranca-custos › Política única de envio, permissões e custos | Núcleo (send/budget) + backup (PG, anexos, SQLite) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t11,t12 | executado-mock | implementação (tarefa abaixo) | 4.7, 6.5 |
+| AT-12.2 | operacao-seguranca-custos › Política única de envio, permissões e custos | Núcleo (send/budget) + backup (PG, anexos, SQLite) | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t11 | executado-mock | implementação (tarefa abaixo) | 1.6 |
+| AT-12.3 | operacao-seguranca-custos › Política única de envio, permissões e custos | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 2.6, tarefa 4.4) | planejado | implementação (tarefa abaixo) | 2.6, 4.4 |
+| AT-12.4 | operacao-seguranca-custos › Política única de envio, permissões e custos | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 4.7) | executado-mock (parcial) | implementação (tarefa abaixo) | 4.7 |
+| AT-12.5 | operacao-seguranca-custos › Política única de envio, permissões e custos | Núcleo (send/budget) + backup (PG, anexos, SQLite) | — | a escrever (tarefa 7.2) | planejado | D4 (retenção/LGPD) | 7.2 |
+| AT-13.1 | ia-opcional › Fluxo principal independente de IA | Núcleo (ai_suggestion) + portão ai-gate (stub); modelo real a definir | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t13 | executado-mock | implementação (tarefa abaixo) | 6.4 |
+| AT-13.2 | ia-opcional › Fluxo principal independente de IA | Núcleo (ai_suggestion) + portão ai-gate (stub); modelo real a definir | evidence/saidas/p2-tdd-green.txt | ai-gate.test.mjs › 9 testes | executado-mock | implementação (tarefa abaixo) | 6.2 |
+| AT-13.3 | ia-opcional › IA somente como sugestão revisável | Núcleo (ai_suggestion) + portão ai-gate (stub); modelo real a definir | evidence/saidas/p2-tdd-green.txt | ai-gate.test.mjs › injeção | executado-mock | implementação (tarefa abaixo) | 6.2 |
+| AT-14.1 | canais-adaptadores › Novo canal sem alterar o núcleo | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t12 | executado-mock | implementação (tarefa abaixo) | 1.2 |
+| AT-14.2 | canais-adaptadores › Novo canal sem alterar o núcleo | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | evidence/saidas/p1-tdd-green.txt | core.test.mjs › t12 | executado-mock | implementação (tarefa abaixo) | 3.11 |
+| AT-14.3 | canais-adaptadores › Novo canal sem alterar o núcleo | Chatwoot Community v4.20.1 (canais) + adaptadores do núcleo | — | a escrever (tarefa 3.11) | planejado | implementação (tarefa abaixo) | 3.11 |

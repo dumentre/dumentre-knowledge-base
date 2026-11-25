@@ -1,0 +1,288 @@
+TAP version 13
+# Subtest: AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+not ok 1 - AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+  ---
+  duration_ms: 2.9062
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:35:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:38:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+not ok 2 - AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+  ---
+  duration_ms: 1.3635
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:58:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+not ok 3 - segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+  ---
+  duration_ms: 0.9342
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:87:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:89:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+not ok 4 - AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+  ---
+  duration_ms: 1.1006
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:102:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:104:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+not ok 5 - AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+  ---
+  duration_ms: 1.0788
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:118:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:120:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+not ok 6 - AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+  ---
+  duration_ms: 1.1753
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:147:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:149:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+not ok 7 - AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+  ---
+  duration_ms: 0.9128
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:177:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:182:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+not ok 8 - AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+  ---
+  duration_ms: 0.846
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:205:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:207:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+not ok 9 - AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+  ---
+  duration_ms: 1.1332
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:233:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:235:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+not ok 10 - AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+  ---
+  duration_ms: 1.3078
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:251:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:261:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+not ok 11 - AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+  ---
+  duration_ms: 0.9192
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:282:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:286:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+not ok 12 - AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+  ---
+  duration_ms: 0.7838
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:305:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:307:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+not ok 13 - AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+  ---
+  duration_ms: 0.7311
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:322:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:324:16)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+not ok 14 - AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+  ---
+  duration_ms: 0.8515
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:335:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:3:9)
+    open (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:19:36)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:338:14)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 0
+# fail 14
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 181.4125

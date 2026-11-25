@@ -1,0 +1,198 @@
+TAP version 13
+# Subtest: saída válida e ancorada nas mensagens passa
+not ok 1 - saída válida e ancorada nas mensagens passa
+  ---
+  duration_ms: 1.8214
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:14:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:15:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.start (node:internal/test_runner/test:944:17)
+    startSubtestAfterBootstrap (node:internal/test_runner/harness:296:17)
+  ...
+# Subtest: campo ausente deve ser null (abstenção), não palpite
+not ok 2 - campo ausente deve ser null (abstenção), não palpite
+  ---
+  duration_ms: 0.21
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:18:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:19:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async startSubtestAfterBootstrap (node:internal/test_runner/harness:296:3)
+  ...
+# Subtest: invenção de preço ou prazo que não está no texto é violação
+not ok 3 - invenção de preço ou prazo que não está no texto é violação
+  ---
+  duration_ms: 0.2679
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:23:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:24:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: evidência apontando para mensagem inexistente é violação
+not ok 4 - evidência apontando para mensagem inexistente é violação
+  ---
+  duration_ms: 0.3419
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:29:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:30:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: ações proibidas (enviar, fundir, cobrança, ignorar política) nunca passam, mesmo que o 'modelo' obedeça ao cliente
+not ok 5 - ações proibidas (enviar, fundir, cobrança, ignorar política) nunca passam, mesmo que o 'modelo' obedeça ao cliente
+  ---
+  duration_ms: 0.2383
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:34:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:36:15)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: schema desconhecido ou campo extra é rejeitado
+not ok 6 - schema desconhecido ou campo extra é rejeitado
+  ---
+  duration_ms: 0.1963
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:41:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    validateExtraction (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:3:46)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:42:13)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: runAi: modelo que lança erro, devolve lixo ou demora demais => resultado vazio, nada aplicado, sem exceção
+not ok 7 - runAi: modelo que lança erro, devolve lixo ou demora demais => resultado vazio, nada aplicado, sem exceção
+  ---
+  duration_ms: 0.3981
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:47:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    runAi (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:4:33)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:49:21)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: runAi com injeção: modelo obediente é barrado; modelo honesto passa
+not ok 8 - runAi com injeção: modelo obediente é barrado; modelo honesto passa
+  ---
+  duration_ms: 0.2853
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    runAi (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:4:33)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:57:20)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+# Subtest: aplicar sugestão exige autorização humana e revalida; nunca toca em envio, vínculo ou cobrança
+not ok 9 - aplicar sugestão exige autorização humana e revalida; nunca toca em envio, vínculo ou cobrança
+  ---
+  duration_ms: 2.0076
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\ai-gate.test.mjs:63:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    The input did not match the regular expression /autoriza/. Input:
+    
+    'Error: não implementado (stub da fase vermelha do TDD)'
+    
+  code: 'ERR_ASSERTION'
+  name: 'AssertionError'
+  expected:
+  actual:
+  error: 'não implementado (stub da fase vermelha do TDD)'
+  stack: |-
+    applySuggestion (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.mjs:5:43)
+    file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:66:23
+    getActual (node:assert:609:5)
+    Function.throws (node:assert:757:24)
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:66:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+  operator: 'throws'
+  stack: |-
+    TestContext.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/ai-gate.test.mjs:66:10)
+    Test.runInAsyncScope (node:async_hooks:214:14)
+    Test.run (node:internal/test_runner/test:1047:25)
+    Test.processPendingSubtests (node:internal/test_runner/test:744:18)
+    Test.postRun (node:internal/test_runner/test:1173:19)
+    Test.run (node:internal/test_runner/test:1101:12)
+    async Test.processPendingSubtests (node:internal/test_runner/test:744:7)
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 0
+# fail 9
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 169.1169

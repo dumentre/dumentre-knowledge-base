@@ -1,0 +1,58 @@
+[
+  {
+    "caso": "C1 texto normal",
+    "esperado": "200 e 1 linha",
+    "obtido": "status 200, linhas 1",
+    "ok": true
+  },
+  {
+    "caso": "C2 reentrega do mesmo id",
+    "esperado": "200 e continua 1 linha",
+    "obtido": "status 200, linhas 1",
+    "ok": true
+  },
+  {
+    "caso": "C3 referral de anúncio preservado",
+    "esperado": "ad_id/ctwa_clid gravados",
+    "obtido": "colunas gravadas: id,from_number,timestamp,type,text,received_at; referral NÃO gravado",
+    "ok": false
+  },
+  {
+    "caso": "C4 evento statuses",
+    "esperado": "status gravado/visível",
+    "obtido": "status 200, linhas novas 0 (ignorado, resposta 200)",
+    "ok": false
+  },
+  {
+    "caso": "C5 mensagem de usuário com username (sem telefone)",
+    "esperado": "gravada, identificada por BSUID",
+    "obtido": "status 200, linhas novas 0 (descartada em silêncio, resposta 200)",
+    "ok": false
+  },
+  {
+    "caso": "C6 áudio",
+    "esperado": "tipo e id da mídia gravados",
+    "obtido": "type=audio, text=null, media_id NÃO gravado",
+    "ok": false
+  },
+  {
+    "caso": "C7 eco smb_message_echoes",
+    "esperado": "mensagem enviada fora da inbox registrada",
+    "obtido": "status 200, linhas novas 0 (ignorado)",
+    "ok": false
+  },
+  {
+    "caso": "C8 payload de 300 KB (Meta permite até 3 MB)",
+    "esperado": "aceito (200)",
+    "obtido": "status 413",
+    "ok": false
+  },
+  {
+    "caso": "C9 payload bruto retido",
+    "esperado": "sim (reprocessável)",
+    "obtido": "não: só 6 colunas (id, from_number, timestamp, type, text, received_at)",
+    "ok": false
+  }
+]
+
+RESUMO: 2/9 comportamentos atendem ao catálogo de aceite; 7 lacunas.

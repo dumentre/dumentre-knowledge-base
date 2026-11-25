@@ -1,0 +1,9 @@
+== mutante 1: remove dedupe de message (UNIQUE ainda existe -> deve virar falha de evento, não duplicata)
+# pass 14
+# fail 0
+== mutante 2: ignora negócio aberto (cria lead duplicado)
+not ok 8 - AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último cont
+not ok 9 - AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o m
+not ok 14 - AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta 
+# pass 11
+# fail 3

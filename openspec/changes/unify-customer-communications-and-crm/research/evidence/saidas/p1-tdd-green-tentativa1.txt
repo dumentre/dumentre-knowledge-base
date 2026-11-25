@@ -1,0 +1,125 @@
+TAP version 13
+# Subtest: AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+ok 1 - AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+  ---
+  duration_ms: 72.5427
+  type: 'test'
+  ...
+# Subtest: AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+not ok 2 - AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+  ---
+  duration_ms: 225.1432
+  type: 'test'
+  location: 'C:\\Users\\luanc\\projects\\dumentre\\pesquisa-omnichannel-20261121\\openspec\\changes\\unify-customer-communications-and-crm\\research\\evidence\\prototipo\\core.test.mjs:55:1'
+  failureType: 'testCodeFailure'
+  error: |-
+    worker saiu 1: file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:101
+      db.exec("PRAGMA journal_mode=WAL; PRAGMA busy_timeout=15000; PRAGMA foreign_keys=ON;");
+         ^
+    
+    Error: database is locked
+        at openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:101:6)
+        at file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/worker.mjs:8:14
+        at ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+        at async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+        at async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+      code: 'ERR_SQLITE_ERROR',
+      errcode: 5,
+      errstr: 'database is locked'
+    }
+    
+    Node.js v22.21.1
+    
+  code: 'ERR_TEST_FAILURE'
+  stack: |-
+    openCore (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.mjs:101:6)
+    file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/worker.mjs:8:14
+    ModuleJob.run (node:internal/modules/esm/module_job:343:25)
+    async onImport.tracePromise.__proto__ (node:internal/modules/esm/loader:665:26)
+    async asyncRunEntryPointWithESMLoader (node:internal/modules/run_main:117:5) {
+    ChildProcess.<anonymous> (file:///C:/Users/luanc/projects/dumentre/pesquisa-omnichannel-20261121/openspec/changes/unify-customer-communications-and-crm/research/evidence/prototipo/core.test.mjs:73:62)
+    ChildProcess.emit (node:events:519:28)
+    maybeClose (node:internal/child_process:1101:16)
+    ChildProcess._handle.onexit (node:internal/child_process:304:5)
+  ...
+# Subtest: segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+ok 3 - segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+  ---
+  duration_ms: 43.3757
+  type: 'test'
+  ...
+# Subtest: AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+ok 4 - AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+  ---
+  duration_ms: 30.6397
+  type: 'test'
+  ...
+# Subtest: AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+ok 5 - AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+  ---
+  duration_ms: 30.5184
+  type: 'test'
+  ...
+# Subtest: AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+ok 6 - AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+  ---
+  duration_ms: 48.9933
+  type: 'test'
+  ...
+# Subtest: AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+ok 7 - AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+  ---
+  duration_ms: 43.0364
+  type: 'test'
+  ...
+# Subtest: AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+ok 8 - AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+  ---
+  duration_ms: 36.7802
+  type: 'test'
+  ...
+# Subtest: AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+ok 9 - AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+  ---
+  duration_ms: 54.7714
+  type: 'test'
+  ...
+# Subtest: AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+ok 10 - AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+  ---
+  duration_ms: 35.4599
+  type: 'test'
+  ...
+# Subtest: AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+ok 11 - AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+  ---
+  duration_ms: 25.3062
+  type: 'test'
+  ...
+# Subtest: AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+ok 12 - AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+  ---
+  duration_ms: 34.0289
+  type: 'test'
+  ...
+# Subtest: AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+ok 13 - AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+  ---
+  duration_ms: 30.2583
+  type: 'test'
+  ...
+# Subtest: AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+ok 14 - AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+  ---
+  duration_ms: 107.5407
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 13
+# fail 1
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 970.9272
