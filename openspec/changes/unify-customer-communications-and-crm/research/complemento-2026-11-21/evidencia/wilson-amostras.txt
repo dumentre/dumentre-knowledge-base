@@ -1,0 +1,7 @@
+n | erros -> limite inferior de Wilson 95% da precisao
+50 0:0.929 1:0.895 2:0.865 3:0.838 5:0.786
+100 0:0.963 1:0.946 2:0.930 3:0.915 5:0.888
+150 0:0.975 1:0.963 2:0.953 3:0.943 5:0.924
+300 0:0.987 1:0.981 2:0.976 3:0.971 5:0.962
+menor n com 0 erros e limite inferior >= 0,95: 73
+regra dos tres: 0 violacoes em 50 => taxa <= ~ 0.06 (95%)

@@ -1,0 +1,259 @@
+[
+  {
+    "url": "https://clinicasense.com",
+    "score": 67,
+    "findings": [
+      "texto de apostas/jogos aparece no conteúdo; confirme se corresponde ao negócio",
+      "copyright mais recente encontrado: 2012",
+      "nenhum link de WhatsApp identificado"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 1460,
+    "viewport": "sim",
+    "copyright_year": "2012",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "não",
+    "form_present": "sim"
+  },
+  {
+    "url": "https://lealclinic.com.br",
+    "score": 100,
+    "findings": [
+      "formulário detectado; funcionamento não testado"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 514,
+    "viewport": "sim",
+    "copyright_year": "não identificado",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "sim",
+    "form_present": "sim"
+  },
+  {
+    "url": "https://gdrsetedesetembro.com.br",
+    "score": 62,
+    "findings": [
+      "conteúdo/plugin Flash ou incorporado legado detectado",
+      "não foi encontrado ajuste de viewport para celular",
+      "tabela HTML pode estar sendo usada no layout"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 237,
+    "viewport": "não",
+    "copyright_year": "não identificado",
+    "jquery_old": "não",
+    "flash": "sim",
+    "layout_table": "sim",
+    "parked": "não",
+    "whatsapp": "não",
+    "form_present": "não"
+  },
+  {
+    "url": "https://scaleyou.com.br",
+    "score": 100,
+    "findings": [
+      "formulário detectado; funcionamento não testado"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 2270,
+    "viewport": "sim",
+    "copyright_year": "2025",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "sim",
+    "form_present": "sim"
+  },
+  {
+    "url": "https://ccbrunetti.com.br",
+    "score": 55,
+    "findings": [
+      "domínio não resolveu no DNS",
+      "site não respondeu normalmente (erro:gaierror)"
+    ],
+    "dns": "não",
+    "http_status": "erro:gaierror",
+    "tls_valid": "não observado",
+    "response_ms": 1,
+    "viewport": "não observado",
+    "copyright_year": "não identificado",
+    "jquery_old": "não observado",
+    "flash": "não observado",
+    "layout_table": "não observado",
+    "parked": "não observado",
+    "whatsapp": "não observado",
+    "form_present": "não observado"
+  },
+  {
+    "url": "https://colegiocaliforniajr.com.br",
+    "score": 55,
+    "findings": [
+      "domínio não resolveu no DNS",
+      "site não respondeu normalmente (erro:gaierror)"
+    ],
+    "dns": "não",
+    "http_status": "erro:gaierror",
+    "tls_valid": "não observado",
+    "response_ms": 1,
+    "viewport": "não observado",
+    "copyright_year": "não identificado",
+    "jquery_old": "não observado",
+    "flash": "não observado",
+    "layout_table": "não observado",
+    "parked": "não observado",
+    "whatsapp": "não observado",
+    "form_present": "não observado"
+  },
+  {
+    "url": "https://colegioolivetano.com.br",
+    "score": 100,
+    "findings": [
+      "nenhum problema automático evidente; revisão visual/manual pendente"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 63,
+    "viewport": "sim",
+    "copyright_year": "não identificado",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "sim",
+    "form_present": "não"
+  },
+  {
+    "url": "https://caomaniapetshop.com.br",
+    "score": 100,
+    "findings": [
+      "formulário detectado; funcionamento não testado"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 1768,
+    "viewport": "sim",
+    "copyright_year": "não identificado",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "sim",
+    "form_present": "sim"
+  },
+  {
+    "url": "https://martinspenna.com.br",
+    "score": 100,
+    "findings": [
+      "nenhum problema automático evidente; revisão visual/manual pendente"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 175,
+    "viewport": "sim",
+    "copyright_year": "2026",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "sim",
+    "form_present": "não"
+  },
+  {
+    "url": "https://lativoli.com.br",
+    "score": 55,
+    "findings": [
+      "domínio não resolveu no DNS",
+      "site não respondeu normalmente (erro:gaierror)"
+    ],
+    "dns": "não",
+    "http_status": "erro:gaierror",
+    "tls_valid": "não observado",
+    "response_ms": 1,
+    "viewport": "não observado",
+    "copyright_year": "não identificado",
+    "jquery_old": "não observado",
+    "flash": "não observado",
+    "layout_table": "não observado",
+    "parked": "não observado",
+    "whatsapp": "não observado",
+    "form_present": "não observado"
+  },
+  {
+    "url": "https://www.panelaodonorte.com.br",
+    "score": 65,
+    "findings": [
+      "site não respondeu normalmente (erro:SSLCertVerificationError)",
+      "certificado HTTPS inválido ou não verificável"
+    ],
+    "dns": "sim",
+    "http_status": "erro:SSLCertVerificationError",
+    "tls_valid": "inválido",
+    "response_ms": 35,
+    "viewport": "não observado",
+    "copyright_year": "não identificado",
+    "jquery_old": "não observado",
+    "flash": "não observado",
+    "layout_table": "não observado",
+    "parked": "não observado",
+    "whatsapp": "não observado",
+    "form_present": "não observado"
+  },
+  {
+    "url": "https://www.omegavet.com.br",
+    "score": 97,
+    "findings": [
+      "nenhum link de WhatsApp identificado",
+      "formulário detectado; funcionamento não testado"
+    ],
+    "dns": "sim",
+    "http_status": "200",
+    "tls_valid": "válido",
+    "response_ms": 93,
+    "viewport": "sim",
+    "copyright_year": "não identificado",
+    "jquery_old": "não",
+    "flash": "não",
+    "layout_table": "não",
+    "parked": "não",
+    "whatsapp": "não",
+    "form_present": "sim"
+  },
+  {
+    "url": "https://amaisfitness.com",
+    "score": 55,
+    "findings": [
+      "domínio não resolveu no DNS",
+      "site não respondeu normalmente (erro:gaierror)"
+    ],
+    "dns": "não",
+    "http_status": "erro:gaierror",
+    "tls_valid": "não observado",
+    "response_ms": 373,
+    "viewport": "não observado",
+    "copyright_year": "não identificado",
+    "jquery_old": "não observado",
+    "flash": "não observado",
+    "layout_table": "não observado",
+    "parked": "não observado",
+    "whatsapp": "não observado",
+    "form_present": "não observado"
+  }
+]

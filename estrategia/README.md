@@ -17,6 +17,10 @@ Entregáveis do [briefing de 08/10/2026](../briefings/2026-10-08-tracao-dumentre
 | 7 | Prospecção: 20 prospects, scripts, 2 sites-proposta | [prospeccao/README.md](prospeccao/README.md) | [Leal](prospeccao/mockups/leal-clinic/index.html) · [GDR](prospeccao/mockups/gdr-7-de-setembro/index.html) |
 | 8 | Backlog de decisões | [../backlog/README.md](../backlog/README.md) | — |
 
+## Estudos de oportunidades
+
+- [Automação, sistemas existentes e IA — 19/11/2026](oportunidades-automacao-legado-ia-2026-11-19.md): análise do vídeo, checagem das alegações, hipóteses comerciais e plano de validação para a Dumentre.
+
 ## Onde mais mexi
 
 - `dumentre-knowledge-base/marca/` — `design.md`, `brand.md`, `voice_principles.md` e `logo/` (SVGs do símbolo).

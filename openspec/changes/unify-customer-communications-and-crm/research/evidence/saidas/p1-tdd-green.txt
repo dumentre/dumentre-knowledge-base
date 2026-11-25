@@ -1,0 +1,94 @@
+TAP version 13
+# Subtest: AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+ok 1 - AT-01 primeiro WhatsApp: 1 mensagem, 1 pessoa, 1 oportunidade, 1 tarefa (3 dias, 09:00 de São Paulo), nenhum envio, sobrevive a reinício
+  ---
+  duration_ms: 70.4707
+  type: 'test'
+  ...
+# Subtest: AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+ok 2 - AT-01 reentrega: 3 vezes em série e 8 processos em paralelo geram o mesmo resultado final
+  ---
+  duration_ms: 249.0469
+  type: 'test'
+  ...
+# Subtest: segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+ok 3 - segurança/AT-10: assinatura inválida => 401 e nada gravado; payload de 300 KB é aceito
+  ---
+  duration_ms: 41.2123
+  type: 'test'
+  ...
+# Subtest: AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+ok 4 - AT-01/AT-05 BSUID: mensagem sem telefone é aceita; depois o telefone aparece e continua a mesma pessoa
+  ---
+  duration_ms: 28.5125
+  type: 'test'
+  ...
+# Subtest: AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+ok 5 - AT-05 ficha unificada: Direct vinculado ao WhatsApp com evidência; última mensagem = Instagram; reversão preserva histórico e não mistura negócios
+  ---
+  duration_ms: 33.6184
+  type: 'test'
+  ...
+# Subtest: AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+ok 6 - AT-03 atribuição: referral válido, ausente e inválido; primeiro e último toque; origem bruta intacta; etiqueta não reescreve
+  ---
+  duration_ms: 45.6913
+  type: 'test'
+  ...
+# Subtest: AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+ok 7 - AT-10 CRM fora do ar: processamento local segue, outbox acumula, recupera após reinício, exatamente 1 entrega por evento
+  ---
+  duration_ms: 59.6312
+  type: 'test'
+  ...
+# Subtest: AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+ok 8 - AT-02 contato conhecido: aberta recebe a mensagem; atrasada não retrocede o último contato; ganha => revisão sem lead duplicado; 2º projeto é explícito
+  ---
+  duration_ms: 38.2359
+  type: 'test'
+  ...
+# Subtest: AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+ok 9 - AT-02 concorrência: dois processadores sobre o mesmo arquivo não criam 2 leads para o mesmo contato novo
+  ---
+  duration_ms: 48.3945
+  type: 'test'
+  ...
+# Subtest: AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+ok 10 - AT-06 status fora de ordem e envio: read antes de delivered fica read; failed após read é ignorado; timeout deixa 'incerto' e não reenvia
+  ---
+  duration_ms: 37.7867
+  type: 'test'
+  ...
+# Subtest: AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+ok 11 - AT-12 política única: envio sem autorização ou acima do orçamento é recusado; logs não carregam texto de cliente
+  ---
+  duration_ms: 29.7459
+  type: 'test'
+  ...
+# Subtest: AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+ok 12 - AT-14 canal novo sem mexer no núcleo: adaptador de teste só recebe; capacidades não oferecidas ficam explícitas
+  ---
+  duration_ms: 25.636
+  type: 'test'
+  ...
+# Subtest: AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+ok 13 - AT-13 IA desligada/quebrada: gancho opcional que lança erro não impede recepção, lead nem tarefa, e não inventa sugestão
+  ---
+  duration_ms: 24.0319
+  type: 'test'
+  ...
+# Subtest: AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+ok 14 - AT-07 follow-up: fronteira de data no fuso, execução simultânea roda 1 vez, resposta em OUTRO canal cancela por política
+  ---
+  duration_ms: 77.5584
+  type: 'test'
+  ...
+1..14
+# tests 14
+# suites 0
+# pass 14
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 959.5677

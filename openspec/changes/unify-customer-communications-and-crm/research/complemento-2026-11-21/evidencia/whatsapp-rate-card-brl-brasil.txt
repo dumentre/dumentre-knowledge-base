@@ -1,0 +1,10 @@
+0 ['Cost per message in BRL on the WhatsApp Business Platform, effective October 1, 2026']
+1 ['We charge on a per-message basis on the WhatsApp Business Platform. Learn more here:', 'https://developers.facebook.com/docs/whatsapp/pricing']
+2 ['Marketing rates apply across Cloud API and Marketing Messages Lite API. Learn more here:', 'https://developers.facebook.com/docs/whatsapp/pricing']
+3 ['Some markets are mapped to a "Rest of" region or "Other." Learn more here:', 'https://developers.facebook.com/docs/whatsapp/pricing#country-calling-codes']
+4 ['In some markets, we have authentication-international rates. Learn more here:', 'https://developers.facebook.com/docs/whatsapp/pricing/authentication-international-rates']
+5 ['Market', 'Currency', 'Marketing', 'Utility', 'Authentication', 'Authentication-\nInternational', 'Service', 'Meta Business Agent']
+6 ['Argentina', 'BRL', '0.3181', '0.1338', '0.1338', 'n/a', '0.1338', '$2.00 USD / 1 M (million) tokens']
+7 ['Bangladesh', 'BRL', '0.3768', '0.0191', '0.0191', '0.4944', '0.0191', '$2.00 USD / 1 M (million) tokens']
+8 ['Brazil', 'BRL', '0.3217', '0.035', '0.035', 'n/a', '0.035', '$2.00 USD / 1 M (million) tokens']
+fonte: CSV oficial 'BRL list rates' (xlsx servido como text/csv) via https://developers.facebook.com/documentation/business-messaging/whatsapp/pricing ; lido 2026-11-21; sha256[:16] em fontes-log.jsonl

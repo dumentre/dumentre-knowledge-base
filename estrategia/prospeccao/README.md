@@ -1,5 +1,9 @@
 # Prospecção ativa
 
+## Atualização 12/11/2026 — DUM-13
+
+Primeira rodada automática documentada em [prospecção automática](prospeccao-automatica.md), com [pipeline CSV](pipeline.csv), [lote de mensagens](lote-auto-1-2026-11-12.md) e [estado da execução](lote-auto-1-2026-11-12-estado.md). O avaliador determinístico e seu teste ficam em `C:\Users\luanc\projects\dumentre\prospeccao\avaliar_sites.py` e `test_avaliar_sites.py`; resultados brutos em [resultado-rodada-1.json](resultado-rodada-1.json). Nenhuma mensagem foi enviada. A decisão de ligar a rotina semanal está pendente no DUM-15.
+
 A prospecção vem **antes** dos anúncios: é grátis, valida qual oferta tem mais tração e gera os primeiros cases. Nada foi enviado; tudo aqui está pronto para o Luan disparar quando aprovar.
 
 | Arquivo | O que tem |

@@ -1,0 +1,64 @@
+TAP version 13
+# Subtest: saída válida e ancorada nas mensagens passa
+ok 1 - saída válida e ancorada nas mensagens passa
+  ---
+  duration_ms: 4.3277
+  type: 'test'
+  ...
+# Subtest: campo ausente deve ser null (abstenção), não palpite
+ok 2 - campo ausente deve ser null (abstenção), não palpite
+  ---
+  duration_ms: 0.2869
+  type: 'test'
+  ...
+# Subtest: invenção de preço ou prazo que não está no texto é violação
+ok 3 - invenção de preço ou prazo que não está no texto é violação
+  ---
+  duration_ms: 0.3554
+  type: 'test'
+  ...
+# Subtest: evidência apontando para mensagem inexistente é violação
+ok 4 - evidência apontando para mensagem inexistente é violação
+  ---
+  duration_ms: 0.509
+  type: 'test'
+  ...
+# Subtest: ações proibidas (enviar, fundir, cobrança, ignorar política) nunca passam, mesmo que o 'modelo' obedeça ao cliente
+ok 5 - ações proibidas (enviar, fundir, cobrança, ignorar política) nunca passam, mesmo que o 'modelo' obedeça ao cliente
+  ---
+  duration_ms: 0.4926
+  type: 'test'
+  ...
+# Subtest: schema desconhecido ou campo extra é rejeitado
+ok 6 - schema desconhecido ou campo extra é rejeitado
+  ---
+  duration_ms: 0.2364
+  type: 'test'
+  ...
+# Subtest: runAi: modelo que lança erro, devolve lixo ou demora demais => resultado vazio, nada aplicado, sem exceção
+ok 7 - runAi: modelo que lança erro, devolve lixo ou demora demais => resultado vazio, nada aplicado, sem exceção
+  ---
+  duration_ms: 27.0075
+  type: 'test'
+  ...
+# Subtest: runAi com injeção: modelo obediente é barrado; modelo honesto passa
+ok 8 - runAi com injeção: modelo obediente é barrado; modelo honesto passa
+  ---
+  duration_ms: 0.6244
+  type: 'test'
+  ...
+# Subtest: aplicar sugestão exige autorização humana e revalida; nunca toca em envio, vínculo ou cobrança
+ok 9 - aplicar sugestão exige autorização humana e revalida; nunca toca em envio, vínculo ou cobrança
+  ---
+  duration_ms: 1.7142
+  type: 'test'
+  ...
+1..9
+# tests 9
+# suites 0
+# pass 9
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 360.5947
