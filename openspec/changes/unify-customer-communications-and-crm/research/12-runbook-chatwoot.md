@@ -70,4 +70,12 @@ Em caso de falha de inicialização, OOM ou regressão de schema:
    gunzip -c /opt/backups/chatwoot/pg-backup-LATEST.sql.gz | docker exec -i $(docker ps -qf "name=chatwoot-postgres") psql -U chatwoot -d chatwoot_production
    docker compose up -d
    ```
-4. Conferir webhook e reprocessar eventos pendentes na outbox do `dumentre-core`.
+4. Conferir webhook e reprocessar eventos pendentes na outbox do `dumentre-core`
+
+## Fechamento do onboarding publico (2026-11-25 23:20 BRT)
+- Risco: onboarding respondia 200 para qualquer pessoa.
+- Feito pelo servidor, sem navegador: AccountBuilder via rails runner no container web criou conta Dumentre e usuario luan@dumentre.com (Luan Cardoso), SuperAdmin, confirmado, administrator. Chave Redis de onboarding apagada.
+- Prova: curl no onboarding passou de 200 para 302 com destino a raiz do Chatwoot (login).
+- GET api/v1/profile com o token: id=1, name=Luan Cardoso, role=administrator, account_id=2.
+- Bitwarden pasta Dumentre: Dumentre / Chatwoot / admin luan (2026-11-25) e Dumentre / Chatwoot / API token (hermes). Valores nunca impressos.
+- A conta tem id 2: usar account_id=2 nas chamadas da API..
