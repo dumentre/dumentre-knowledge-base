@@ -39,3 +39,7 @@ Serviços existentes sem alteração: wa-webhook 19 MiB, openbao 18 MiB, traefik
 
 ## Prova
 `docker ps`: chatwoot-web, worker, redis, postgres `(healthy)`. `curl -I https://chatwoot.46-224-228-253.sslip.io/` = `HTTP/2 302` (Location `/installation/onboarding`, TLS válido). Conta admin ainda NÃO criada (onboarding aberto: criar logo; signup público desativado).
+
+## Replay completo (01:56-01:57 UTC)
+1.000 eventos (contato+conversa+mensagem incoming, via rails runner, com jobs Sidekiq) em 46,7 s, enquanto 3 operadores simulados fizeram 300 requisições HTTPS (200 x 300, média 0,097 s, máx 0,379 s). Pico: web 61,9% CPU e 1011 MiB/1 GiB (no limite), worker 77-97% CPU, postgres 17%; RAM disponível mínima 1379 MiB, swap 20 MiB, load 2.31. Todos healthy após; serviços existentes sem restart e sem queda. Dados de teste (conta gcap-test) removidos.
+Veredito revisado: G-CAP PASSA no critério proposto (1.000 eventos + 3 operadores), com ressalva: web encosta no limite de 1 GiB em pico; considerar 1,25 GiB.
